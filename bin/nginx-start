@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# Script to start nginx
+#
+#sudo launchctl load -w /Library/LaunchDaemons/me.izo.nginx.plist;
+#sudo /usr/local/sbin/nginx
+
+launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
+
+echo "Nginx server started."

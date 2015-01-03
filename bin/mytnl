@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+#alias mytun="ssh dylansm -L 3306:127.0.0.1:3306"
+
+if [ ! $1 ]; then
+  red='\e[0;31m'
+  NC='\e[0m' # No Color
+  echo -e "${red}ERROR:${NC} SSH endpoint required for MySQL tunnel."
+  exit
+fi
+
+ssh -Ng -L 3307:127.0.0.1:3306 $1
+mysql -h 127.0.0.1 -P 3307 -u deploy deploy_prod -pXWewTEUTNb2JzeLkp4hvjk1F
+echo "Waiting..."

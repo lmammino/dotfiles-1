@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+# Script to reload nginx configuration script
+#
+#sudo kill -HUP `cat /var/run/nginx.pid`
+kill -HUP `cat /usr/local/var/run/nginx.pid`
+
+echo "Nginx configuration script reloaded."

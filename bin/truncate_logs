@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+cat /dev/null > ~/logs/nginx/access.log
+cat /dev/null > ~/logs/nginx/error.log

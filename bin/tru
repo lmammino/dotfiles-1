@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# get current working directory so tmux session can be unique
+app_name="${PWD##*/}"
+name="Rack-$app_name"
+
+tmux new-session -s "$name" -n zsh -d
+tmux send-keys -t "$name" "open ." C-m
+tmux send-keys -t "$name" "ll" C-m
+tmux send-keys -t "$name" "lip 9292" C-m
+tmux new-window -n vim
+tmux send-keys "reattach-to-user-namespace vim ." C-m
+tmux new-window -n rspec
+tmux new-window -n guard
+tmux send-keys -t "$name" "bundle exec guard" C-m
+tmux new-window -n server
+tmux send-keys -t "$name" 'unicorn -p 9292' C-m
+tmux new-window -n redis
+tmux send-keys 'redis-cli' C-m
+tmux new-window -n irb
+tmux send-keys -t "$name" 'reattach-to-user-namespace bundle exec irb' C-m
+tmux new-window -n tasks
+tmux send-keys -t "$name" "reattach-to-user-namespace vim ~/Dropbox/TaskPaper/$app_name.taskpaper" C-m
+tmux select-window -t 1
+tmux attach -t "$name"

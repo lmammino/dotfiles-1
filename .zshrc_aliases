@@ -1,0 +1,56 @@
+alias ll="ls -alG"
+alias ..='cd ../'
+alias ...='cd ../../'
+alias history='history 0'
+#alias api_switch='`echo "${1}"`'
+alias rake='noglob rake' # allows rake and zsh to get along
+alias brake='bundle exec rake'
+alias rakem="rake db:migrate"
+alias rakemt="rake db:migrate RAILS_ENV=test"
+alias raker="rake db:rollback"
+alias rakert="rake db:rollback RAILS_ENV=test"
+alias bundled="echo '\nInstalling gems for development and test only...\n'; bundle install --without production staging"
+alias precomp="RAILS_ENV=production bundle exec rake assets:precompile"
+alias cuc='cucumber'
+alias rmsvn='find . -name .svn -print0 | xargs -0 rm -rf'
+alias rmpyc="find . -name \"*.pyc\" -exec rm '{}' ';'"
+alias rmorig="find . -name \"*.orig\" -exec rm '{}' ';'"
+alias rmswp="find . -name \".*.swp\" -exec rm '{}' ';'"
+alias f="ack -air"
+alias xcode='cd /Users/Shared/Development/Xcode/Projects'
+alias d='cd ~/Desktop'
+alias p='cd /Users/Shared/Development/Projects'
+alias pd='cd ~/Dropbox/Documents/Project\ Documents'
+alias ojp='cd ~/Dropbox/Documents/Project\ Documents/Owen\ Jones'
+alias doc='cd ~/Dropbox/Documents'
+alias sites='cd /Users/Shared/Development/Sites'
+alias dev='cd /Users/Shared/Development'
+alias bin='if [ -d ./bin ]; then cd bin; else cd ~/bin; fi'
+alias code='cd /Users/Shared/Development/Code_Library'
+alias pwdc="pwd | pbcopy"
+alias ipc="curl ifconfig.me | pbcopy"
+#alias vln="nocorrect vln"
+#alias lip="nocorrect lip"
+alias yui="java -jar ~/bin/yuicompressor-2.4.7.jar"
+alias bfg="java -jar ~/bin/bfg-1.11.7.jar"
+alias vim="reattach-to-user-namespace vim"
+#alias mytun="ssh dylansm -L 3306:127.0.0.1:3306"
+alias gitp='git clone "$(pbpaste)"'
+#alias gitpl='git pull origin master'
+#alias gitps='git push origin master'
+alias gitrr='git remote remove '
+alias gitra='git remote add origin "$(pbpaste)"'
+alias gitu='git add -u'
+alias git.='git add .'
+alias tree='tree -a'
+alias nl="npm list --depth=0 2>/dev/null"
+alias ng="npm list -g --depth=0 2>/dev/null"
+alias tl="tmux list-sessions"
+alias ta="tmux attach -t"
+alias tk="tmux kill-session -t"
+alias secret="ruby -rsecurerandom -e 'puts SecureRandom.hex(32)' | pbcopy; echo '32-byte hex secret copied to clipboard!'"
+alias awscomp="source /usr/local/bin/aws_zsh_completer.sh"
+
+alias ctag='ctags -R --exclude=.git --exclude=log --exclude=tmp *'
+
+api_switch() { eval `~/bin/api_switch.rb ${1}` }
