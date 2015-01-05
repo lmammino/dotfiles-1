@@ -1,6 +1,3 @@
-#ruby=ruby-2.1.2
-#ruby-gemset=global
-
 source 'https://rubygems.org'
 
 gem 'wirb'
