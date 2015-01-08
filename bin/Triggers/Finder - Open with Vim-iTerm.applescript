@@ -23,16 +23,19 @@ tell application "Finder"
 end tell
 
 tell application "iTerm"
-	make new terminal
-	tell the current terminal
-	activate current session
-	launch session "Default Session"
-	tell the last session
-		if dir is true then
-			write text "cd '" & thePath & "'; vim ."
-		else
-			write text "cd '" & thePath & "'; vim '" & theFile & "'"
-		end if
-	end tell
+	--make new terminal
+	set term to (make new terminal)
+	--tell the current terminal
+	tell term
+		activate current session
+		launch session "Default Session"
+		
+		tell the last session
+			if dir is true then
+				write text "cd '" & thePath & "'; vim ."
+			else
+				write text "cd '" & thePath & "'; vim '" & theFile & "'"
+			end if
+		end tell
 	end tell
 end tell
