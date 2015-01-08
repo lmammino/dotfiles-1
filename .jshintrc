@@ -1,0 +1,43 @@
+{
+    "predef": [
+        "jasmine",
+        "spyOn",
+        "it",
+        "describe",
+        "expect"
+    ],
+
+    "node"     : true,
+    "es5"      : true,
+    "browser"  : true,
+    "jquery"   : true,
+
+    "maxerr"   : 200,
+    "passfail" : false,
+
+    "asi"      : false,
+    "bitwise"  : false,
+    "boss"     : false, // true to suppress conditional v. assignment warning
+    "curly"    : true,
+    "debug"    : true,
+    "devel"    : true,
+    "eqeqeq"   : true,
+    "eqnull"   : false,
+    "evil"     : false,
+    "forin"    : false,
+    "immed"    : true,
+    "indent"   : false,
+    "laxbreak" : false,
+    "newcap"   : true,
+    "noarg"    : true,
+    "noempty"  : false,
+    "nonew"    : true,
+    "nomen"    : false,
+    "onevar"   : true,
+    "plusplus" : false,
+    "regexp"   : true,
+    "undef"    : false, // noisy used before defined
+    "sub"      : false,
+    "strict"   : false,
+    "white"    : false
+}

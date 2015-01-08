@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/Applications/Firefox2.app/Contents/MacOS/firefox-bin -p FF2 -no-remote &

@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+if Dir.exists? '.git'
+  remote = `git remote -v`[/github.com.+\.git/]
+  unless remote.nil?
+    remote.gsub!(":", "/")
+    remote_url = "http://#{remote[0..-5]}"
+    `open #{remote_url}`
+    puts "\nOpening #{remote_url} ..."
+  end
+end

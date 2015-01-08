@@ -1,0 +1,12 @@
+#!/bin/bash
+# Create a RubyMotion app, change into the app's directory, and run ctags.
+# Written by Raymond T. Hightower on February 12, 2013
+
+echo "Creating a new RubyMotion app called:" $1
+motion create $1
+cd $1
+echo "Creating ctags for the new RubyMotion app..."
+rake ctags
+echo "Opening the new app in Vim..."
+vim .
+echo "To use the RubyMotion console, cd into the new directory:" $1

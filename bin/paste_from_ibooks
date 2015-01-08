@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+pbpaste | sed -E -e 's/^[ ]?[0-9]* //g' | sed -E -e 's/“[ ]?[0-9]?[ ]?//g' | sed -E -e 's/”$//g'  | sed -E -e 's/^(Excerpt From).*//g'
+#pbpaste | iconv -f latin1 -t utf-8 | sed -E -e 's/^“//g' | sed -E -e 's/”$//g'
+#pbpaste | sed -E -e 's/^“//' | sed -E -e 's/”$//'
+#pbpaste | sed -E -e 's/^[ ]?[0-9]* //g' | sed -E -e 's/^“//' | sed -E -e 's/”$//' | sed -E -e 's/^(Excerpt From).*//g'
