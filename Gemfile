@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+gem 'wirb'
+gem 'rcodetools'
+gem 'CoffeeTags'
+gem 'guard'
+gem 'guard-ctags-bundler'
+gem 'haml'
+gem 'hpricot'
+gem 'html2haml'

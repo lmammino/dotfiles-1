@@ -1,0 +1,3 @@
+#notification :off
+Guard.options[:clear] = true
+Guard.options[:all_on_start] = true

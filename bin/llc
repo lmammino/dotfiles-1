@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+path=$1
+if [[ ! $1 ]]; then
+  echo "
+No directory or filename given. Current directory will be copied.
+  
+  "
+  path='.'
+fi
+
+ls -Gal $path | awk '{print $9}' | pbcopy

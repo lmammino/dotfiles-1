@@ -1,0 +1,38 @@
+#!/usr/local/bin/zsh
+
+# get current working directory so tmux session can be unique
+app_name="${PWD##*/}"
+name="Rails-$app_name"
+# get git remote from arg
+if [ $1 ]; then
+  remote=$1
+else
+  remote="origin"
+fi
+# get current branch
+branch_name="$(git symbolic-ref HEAD 2>/dev/null)" || branch_name="(unnamed branch)"  # detached HEAD
+branch_name=${branch_name##refs/heads/}
+
+tmux new-session -s "$name" -n ${SHELL##*/} -d
+#if [ "$branch_name" != "(unnamed branch)" ]; then
+  #tmux send-keys -t "$name" "git pull $remote master" C-m
+#fi
+#tmux send-keys -t "$name" "open ." C-m
+tmux send-keys -t "$name" "ll" C-m
+tmux send-keys -t "$name" "lip 3000 localhost" C-m
+tmux new-window -n vim
+tmux send-keys -t "$name" 'reattach-to-user-namespace vim .' C-m
+tmux new-window -n guard
+tmux send-keys -t "$name" "bundle exec guard" C-m
+tmux new-window -n server
+tmux send-keys -t "$name" 'reattach-to-user-namespace bundle exec rails server' C-m
+tmux new-window -n console
+tmux send-keys -t "$name" 'reattach-to-user-namespace bundle exec rails console' C-m
+tmux new-window -n sql
+tmux send-keys -t "$name" 'reattach-to-user-namespace bundle exec rails dbconsole -p' C-m
+tmux new-window -n irb
+tmux send-keys -t "$name" 'reattach-to-user-namespace bundle exec irb' C-m
+tmux new-window -n tasks
+tmux send-keys -t "$name" "reattach-to-user-namespace vim ~/Dropbox/TaskPaper/$app_name.taskpaper" C-m
+tmux select-window -t 0
+tmux attach -t "$name"

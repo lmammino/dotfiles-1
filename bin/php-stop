@@ -1,0 +1,9 @@
+#!/bin/bash
+#
+# Script to stop PHP
+#
+#sudo launchctl unload -w /Library/LaunchDaemons/me.izo.php-fcgi.plist;
+launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.php54.plist
+# use the following whether loading manually or not
+#sudo kill `cat /var/run/php-fpm.pid`
+echo "PHP-FPM stopped."

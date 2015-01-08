@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+open "/Applications/Native Instruments/Maschine 2/Maschine 2.app"

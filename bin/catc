@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+
+if [[ ! $1 ]]; then
+  echo "
+Please pass a filename as argument.
+  
+For example:
+  
+  copy readme.txt
+  "
+  exit
+fi
+
+cat $1 | pbcopy
+
+echo "
+Contents of ${1} copied!"
