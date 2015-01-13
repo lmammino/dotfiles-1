@@ -140,3 +140,6 @@
 [remote "vim_colorschemes"]
 	url = git@github.com:flazz/vim-colorschemes.git
 	fetch = +refs/heads/*:refs/remotes/vim_colorschemes/*
+[branch "linux"]
+	remote = origin
+	merge = refs/heads/linux
