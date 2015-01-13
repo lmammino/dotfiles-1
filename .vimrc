@@ -1,6 +1,5 @@
 runtime bundle/pathogen/autoload/pathogen.vim " necessary because Pathogen is submodule
 execute pathogen#infect()
-
 syntax on
 filetype plugin indent on
 
@@ -45,7 +44,7 @@ set clipboard=unnamed
 set nofoldenable
 set showmode
 set background=dark
-colorscheme base16-twilight
+colorscheme base16-default
 set omnifunc=syntaxcomplete#Complete
 "set synmaxcol=120
 set tags+=gems.tags

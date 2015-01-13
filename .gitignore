@@ -1,9 +1,6 @@
-HOME
-OFFICE
 .api_secrets.yml
 .app_secrets.yml
 
-.DS_Store
 *.swp
 .netrwhist
 .bash*
@@ -73,23 +70,20 @@ Dropbox*
 src/
 tmp/
 mbox
-Maschine 2.log
 
-.boot2docker/
 .passenger/
-VirtualBox VMs/
 
-Creative Cloud Files
-Applications*
-Desktop/
-Development
-Documents*
-Downloads/
-Dropbox/
-Library/
-Movies/
-Music/
-Pictures/
-Public/
-Sites
-Projects
+.ICEauthority
+.Xauthority
+.compiz/
+.fontconfig/
+.gconf/
+.local/
+.mkshrc
+.mozilla/
+.parallels/
+.xsession-errors
+.xsession-errors.old
+.zlogin
+examples.desktop
+fontconfig/
