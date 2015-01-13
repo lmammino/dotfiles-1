@@ -27,7 +27,10 @@ alias sites='cd /Users/Shared/Development/Sites'
 alias dev='cd /Users/Shared/Development'
 alias bin='if [ -d ./bin ]; then cd bin; else cd ~/bin; fi'
 alias code='cd /Users/Shared/Development/Code_Library'
+<<<<<<< HEAD
 alias dock='cd /Users/Shared/Development/Docker'
+=======
+>>>>>>> 6fb4174a5c6edfd7a1b9eaa271fa506270b54a51
 alias pwdc="pwd | pbcopy"
 #alias gitsub="git log | grep git-subtree-dir | tr -d ' ' | cut -d ":" -f2 | sort | uniq"
 alias ipc="curl ifconfig.me | pbcopy"
@@ -52,7 +55,10 @@ alias ta="tmux attach -t"
 alias tk="tmux kill-session -t"
 alias secret="ruby -rsecurerandom -e 'puts SecureRandom.hex(32)' | pbcopy; echo '32-byte hex secret copied to clipboard!'"
 alias awscomp="source /usr/local/bin/aws_zsh_completer.sh"
+<<<<<<< HEAD
 alias efi="sudo mkdir /Volumes/esp; sudo mount -t msdos /dev/disk0s1 /Volumes/esp"
+=======
+>>>>>>> 6fb4174a5c6edfd7a1b9eaa271fa506270b54a51
 
 alias ctag='ctags -R --exclude=.git --exclude=log --exclude=tmp *'
 
