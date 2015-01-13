@@ -137,3 +137,6 @@
 [remote "super_retab"]
 	url = git@github.com:dylansm/vim-super-retab.git
 	fetch = +refs/heads/*:refs/remotes/super_retab/*
+[remote "vim_colorschemes"]
+	url = git@github.com:flazz/vim-colorschemes.git
+	fetch = +refs/heads/*:refs/remotes/vim_colorschemes/*

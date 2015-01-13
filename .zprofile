@@ -2,16 +2,8 @@ export EDITOR="vim"
 export LC_CTYPE=en_US.UTF-8
 export NODE_PATH=/usr/local/lib/node_modules
 export SCALA_HOME=/usr/local/scala
-export XCODE="`xcode-select --print-path`"
 export PATH="/usr/local/bin:$HOME/bin:/usr/local/sbin:/usr/local/mysql/bin:${SCALA_HOME}/bin:$PATH"
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
-
-# uncomment when using AVR
-#export C_INCLUDE_PATH=/usr/local/CrossPack-AVR/include:$C_INCLUDE_PATH
-
-export DOCKER_CERT_PATH=/Users/dylan/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
-export DOCKER_HOST=tcp://192.168.59.103:2376
 
 if [[ -f .api_secrets.yml ]]; then
 
@@ -23,8 +15,6 @@ if [[ -f .api_secrets.yml ]]; then
 fi
 
 if [[ -f .app_secrets.yml ]]; then
-
-  export RHIZOME_POSTMARK=`ruby -ryaml -e "puts YAML::load_file(File.join(File.expand_path('~'), '.app_secrets.yml'))['rhizome']['defaults']['postmark']"`
 
   export OAUTH_RAILS_FB_KEY=`ruby -ryaml -e "puts YAML::load_file(File.join(File.expand_path('~'), '.app_secrets.yml'))['oauth_rails']['defaults']['facebook_key']"`
   export OAUTH_RAILS_FB_SECRET=`ruby -ryaml -e "puts YAML::load_file(File.join(File.expand_path('~'), '.app_secrets.yml'))['oauth_rails']['defaults']['facebook_secret']"`
@@ -43,6 +33,7 @@ if [[ -f .app_secrets.yml ]]; then
 
 fi
 
+# python related
 if [ -n "$VIRTUAL_ENV" ]; then
   . "$VIRTUAL_ENV/bin/activate"
 fi
