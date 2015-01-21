@@ -16,6 +16,9 @@ setopt NO_CASE_GLOB  # set ignore case for ls etc
 setopt AUTO_PUSHD
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'   # case insensitive completion for cd etc *N*
 
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+zstyle ':completion:*:*:git:*' script ~/bin/.git-completion.sh
+
 bindkey -e
 bindkey '^[[1;9C' forward-word
 bindkey '^[[1;9D' backward-word

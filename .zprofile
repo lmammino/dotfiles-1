@@ -43,11 +43,13 @@ if [[ -f .app_secrets.yml ]]; then
 
 fi
 
+# python related
 if [ -n "$VIRTUAL_ENV" ]; then
   . "$VIRTUAL_ENV/bin/activate"
 fi
 
-zstyle ':completion:*:*:git:*' script ~/bin/.git-completion.sh
+export NVM_DIR="/Users/dylan/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
