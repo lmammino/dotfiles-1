@@ -41,6 +41,7 @@ Dropbox*
 .FrontDesign/
 .gitk
 .gittrees
+.gnome
 .gnupg
 .grunt-init
 .guard_history
@@ -55,6 +56,7 @@ Dropbox*
 .nvm/
 .pearrc
 .pip/
+.pki
 .psql_history
 .python-eggs/
 .rdebug_hist
@@ -88,3 +90,4 @@ mbox
 examples.desktop
 fontconfig/
 Desktop/
+Downloads/

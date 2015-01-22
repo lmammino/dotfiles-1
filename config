@@ -8,9 +8,6 @@
 [remote "origin"]
 	url = git@github.com:dylansm/dotfiles.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
-[branch "master"]
-	remote = origin
-	merge = refs/heads/master
 [remote "coffeetags"]
 	url = git@github.com:lukaszkorecki/CoffeeTags.git
 	fetch = +refs/heads/*:refs/remotes/coffeetags/*

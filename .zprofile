@@ -38,6 +38,9 @@ if [ -n "$VIRTUAL_ENV" ]; then
   . "$VIRTUAL_ENV/bin/activate"
 fi
 
+export NVM_DIR="/home/owen/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
 zstyle ':completion:*:*:git:*' script ~/bin/.git-completion.sh
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
