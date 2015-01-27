@@ -52,6 +52,7 @@ Dropbox*
 .ivy2/
 .lein/
 .lesshst
+.lldb
 .netrc
 .node-completion/
 .node-gyp/
