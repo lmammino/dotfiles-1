@@ -41,9 +41,6 @@
 [remote "delimitmate"]
 	url = git@github.com:Raimondi/delimitMate.git
 	fetch = +refs/heads/*:refs/remotes/delimitmate/*
-[remote "docker_vim"]
-	url = git@github.com:honza/dockerfile.vim.git
-	fetch = +refs/heads/*:refs/remotes/docker_vim/*
 [remote "emmet"]
 	url = git@github.com:mattn/emmet-vim.git
 	fetch = +refs/heads/*:refs/remotes/emmet/*
@@ -137,3 +134,6 @@
 [remote "super_retab"]
 	url = git@github.com:dylansm/vim-super-retab.git
 	fetch = +refs/heads/*:refs/remotes/super_retab/*
+[remote "dockerfile"]
+	url = git@github.com:ekalinin/Dockerfile.vim.git
+	fetch = +refs/heads/*:refs/remotes/dockerfile/*
