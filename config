@@ -38,9 +38,6 @@
 [remote "delimitmate"]
 	url = git@github.com:Raimondi/delimitMate.git
 	fetch = +refs/heads/*:refs/remotes/delimitmate/*
-[remote "docker_vim"]
-	url = git@github.com:honza/dockerfile.vim.git
-	fetch = +refs/heads/*:refs/remotes/docker_vim/*
 [remote "emmet"]
 	url = git@github.com:mattn/emmet-vim.git
 	fetch = +refs/heads/*:refs/remotes/emmet/*
