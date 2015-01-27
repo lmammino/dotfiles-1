@@ -137,3 +137,6 @@
 [branch "linux"]
 	remote = origin
 	merge = refs/heads/linux
+[remote "dockerfile"]
+	url = git@github.com:ekalinin/Dockerfile.vim.git
+	fetch = +refs/heads/*:refs/remotes/dockerfile/*
