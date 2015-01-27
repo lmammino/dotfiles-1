@@ -58,6 +58,9 @@ set fileencodings=ucs-bom,utf-8,latin1
 " Toggle paste mode
 nnoremap <C-P> :set invpaste paste?<CR>
 
+nnoremap <F5> "=strftime("%Y-%m-%d")<CR>P
+inoremap <F5> <C-R>=strftime("%Y-%m-%d")<CR>
+
 " set j/k keys to treat wrapped lines as multiple rows
 nnoremap j gj
 nnoremap k gk
