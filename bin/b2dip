@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if hash boot2docker 2>/dev/null; then
+  ip=`boot2docker ip`
+  echo "$ip" | pbcopy
+  echo "Your boot2docker IP address is: $ip"
+  echo "(Copied to your clipboard)"
+else
+  echo "The boot2docker command was not found. Is it installed?"
+fi
