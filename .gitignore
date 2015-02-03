@@ -11,6 +11,7 @@ Dropbox*
 .dockercfg
 .byebug_hist
 .cache/
+.gvm/
 .mysql_history
 .profile
 .ssh/
