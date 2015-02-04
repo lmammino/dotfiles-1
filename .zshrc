@@ -40,3 +40,4 @@ ${smiley}  %{$reset_color%}'
 fi
 
 RPROMPT='%{$fg[magenta]%} $(~/.rvm/bin/rvm-prompt)$(~/bin/git_cwd_info.rb)%{$reset_color%}'
+[[ -s "/Users/dylan/.gvm/scripts/gvm" ]] && source "/Users/dylan/.gvm/scripts/gvm"

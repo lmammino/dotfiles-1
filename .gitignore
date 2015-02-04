@@ -74,7 +74,6 @@ Dropbox*
 src/
 tmp/
 mbox
-Maschine 2.log
 
 .boot2docker/
 .passenger/
