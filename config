@@ -137,3 +137,6 @@
 [remote "dockerfile"]
 	url = git@github.com:ekalinin/Dockerfile.vim.git
 	fetch = +refs/heads/*:refs/remotes/dockerfile/*
+[remote "vim-go"]
+	url = git@github.com:fatih/vim-go.git
+	fetch = +refs/heads/*:refs/remotes/vim-go/*

@@ -1,5 +1,6 @@
 HOME
 OFFICE
+OJPRMBP
 .api_secrets.yml
 .app_secrets.yml
 
@@ -11,6 +12,7 @@ Dropbox*
 .dockercfg
 .byebug_hist
 .cache/
+.gvm/
 .mysql_history
 .profile
 .ssh/
