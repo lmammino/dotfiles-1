@@ -164,7 +164,9 @@ au BufRead,BufNewFile *.hamlc set ft=haml
 map <C-b> :!open -a Safari %<cr>
 
 " Command-Shift-F for Ack
-map <C-F> :Ack -i<space>
+"map <C-F> :Ack -i<space>
+map <C-F> :Ag<space>
+
 
 map + :cnext<CR>
 map _ :cprevious<CR>
