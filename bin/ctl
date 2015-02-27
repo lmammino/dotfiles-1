@@ -57,10 +57,13 @@ class Controller
 
   def start_app
     plist = @apps[@app]
+    check_plist plist
+
     if running?
       puts "\n#{@app} is already running."
     else
       puts "\nStarting #{@app} with #{plist}..."
+
       if plist["inactive"]
         FileUtils.mv(plist, LAUNCH_AGENT_DIR)
         plist.gsub!(/\/inactive/, '')
@@ -72,6 +75,8 @@ class Controller
 
   def stop_app
     plist = @apps[@app]
+    check_plist plist
+
     unless running?
       puts "\n#{@app} is already stopped."
     else
@@ -82,7 +87,8 @@ class Controller
       end
       #puts $?
     end
-    if File.exists? plist
+
+    if !plist['inactive'] and File.exists? plist
       FileUtils.mv(plist, @inactive_dir)
     end
   end
@@ -140,6 +146,13 @@ class Controller
       inactive_dir
     else
       Dir.mkdir inactive_dir
+    end
+  end
+
+  def check_plist(plist)
+    if plist.nil?
+      puts "\nThere is no startup plist for that application."
+      exit
     end
   end
 
