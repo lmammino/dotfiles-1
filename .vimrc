@@ -163,8 +163,9 @@ au BufRead,BufNewFile *.hamlc set ft=haml
 
 map <C-b> :!open -a Safari %<cr>
 
-" Command-Shift-F for Ack
+" cmd-f for Ack
 "map <C-F> :Ack -i<space>
+" cmd-f for Silver Search
 map <C-F> :Ag<space>
 
 
