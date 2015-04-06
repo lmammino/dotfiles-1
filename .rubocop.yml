@@ -14,3 +14,6 @@ Style/SpaceInsideHashLiteralBraces:
 
 Style/RaiseArgs:
   Enabled: false
+
+LeadingCommentSpace:
+  Enabled: false
