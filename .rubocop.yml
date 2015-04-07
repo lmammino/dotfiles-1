@@ -1,0 +1,19 @@
+# Inherits everything else from defaul Rubocop config
+
+Metrics/LineLength:
+  Max: 100
+
+Style/SpaceBeforeBlockBraces:
+  Enabled: false
+
+Style/SpaceInsideBlockBraces:
+  Enabled: false
+
+Style/SpaceInsideHashLiteralBraces:
+  Enabled: false
+
+Style/RaiseArgs:
+  Enabled: false
+
+LeadingCommentSpace:
+  Enabled: false

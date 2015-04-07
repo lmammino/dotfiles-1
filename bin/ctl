@@ -1,0 +1,170 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+require 'FileUtils'
+require_relative 'lib/colorize'
+
+class Controller
+
+  LAUNCH_AGENT_DIR = "#{Dir.home}/Library/LaunchAgents"
+  WIDTH = 30
+  CHILD_OFFSET_WIDTH = 10
+  NOT_RUNNING_OFFSET_WIDTH = 4
+
+  def initialize(cmd, app)
+    @inactive_dir = find_or_create_inactive_dir
+    apps = read_launch_agents
+    @apps = apps.sort.to_h
+    @app = app
+    @cmd = "#{cmd}_app"
+    if cmd == "list"
+      list_apps
+      exit
+    elsif cmd == "start-all"
+      start_all
+      exit
+    elsif cmd == "stop-all"
+      stop_all
+      exit
+    else
+      if self.respond_to? @cmd
+        self.send(@cmd)
+      end
+    end
+  end
+
+  def list_apps
+    puts "\nAvailable applications:"
+    print_line
+    @apps.keys.each do |k|
+      @app = k
+      print k
+      if running?
+        if @app == 'boot2docker'
+          (WIDTH - CHILD_OFFSET_WIDTH - k.length).times { print ' '}
+          puts "child process running".green
+        else
+          (WIDTH + NOT_RUNNING_OFFSET_WIDTH - k.length).times { print ' '}
+          puts "running".green
+        end
+      else
+        (WIDTH - k.length).times { print ' '}
+        puts "not running".red
+      end
+    end
+    print_line
+  end
+
+  def start_app
+    plist = @apps[@app]
+    check_plist plist
+
+    if running?
+      puts "\n#{@app} is already running."
+    else
+      puts "\nStarting #{@app} with #{plist}..."
+
+      if plist["inactive"]
+        FileUtils.mv(plist, LAUNCH_AGENT_DIR)
+        plist.gsub!(/\/inactive/, '')
+      end
+      `launchctl load #{plist}`
+      #puts $?
+    end
+  end
+
+  def stop_app
+    plist = @apps[@app]
+    check_plist plist
+
+    unless running?
+      puts "\n#{@app} is already stopped."
+    else
+      puts "\nStopping #{@app} with #{plist}..."
+      `launchctl unload #{plist}`
+      if @app == 'boot2docker'
+        `boot2docker down`
+      end
+      #puts $?
+    end
+
+    if !plist['inactive'] and File.exists? plist
+      FileUtils.mv(plist, @inactive_dir)
+    end
+  end
+
+  def running?
+    if @app == 'boot2docker'
+      `ps aux | grep #{@app} | grep -v grep | grep -v #{__FILE__}`.length > 0
+    else
+      `ps aux | grep #{@app} | grep -v grep | grep -v VirtualBox | grep -v #{__FILE__}`.length > 0
+    end
+  end
+
+  def read_launch_agents
+    plists = Dir.glob(File.join(LAUNCH_AGENT_DIR, "homebrew*.plist"))
+    unless Dir[@inactive_dir].empty?
+      plists.concat Dir.glob(File.join(@inactive_dir, "homebrew*.plist"))
+    end
+    Hash[plists.collect { |agent| [app_name(agent), agent] }]
+  end
+
+  def app_name(agent)
+    agent.split(".")[-2]
+  end
+
+  def start_all
+    puts 'Starting all agents...'
+    puts '----------------------'
+    @apps.each do |k, v|
+      if v["inactive"]
+        @app = k
+        start_app
+      end
+    end
+  end
+
+  def stop_all
+    puts 'Stopping all agents...'
+    puts '----------------------'
+    @apps.each do |k, v|
+      unless v["inactive"]
+        @app = k
+        stop_app
+      end
+    end
+  end
+
+  def print_line
+    (WIDTH+11).times { print '-'}
+    print "\n"
+  end
+
+  def find_or_create_inactive_dir
+    inactive_dir = "#{LAUNCH_AGENT_DIR}/inactive"
+    if Dir.exists? inactive_dir
+      inactive_dir
+    else
+      Dir.mkdir inactive_dir
+    end
+  end
+
+  def check_plist(plist)
+    if plist.nil?
+      puts "\nThere is no startup plist for that application."
+      exit
+    end
+  end
+
+end
+
+unless ARGV[0] and ARGV[1]
+  unless ARGV[0] =~ /list|stop|start/
+    puts "\nUsage:\nctl cmd app-name\n\nPlease provide a command and an application name.\n\n"
+    puts "Commands include: start, stop, start-all, stop-all.\n"
+    puts "For a list of available programs, use 'ctl list'."
+    exit
+  end
+end
+
+Controller.new(ARGV[0], ARGV[1])

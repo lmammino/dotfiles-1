@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# get current working directory so tmux session can be unique
+app_name="${PWD##*/}"
+name="RubyMotion-$app_name"
+
+tmux new-session -s "$name" -n zsh -d
+tmux send-keys -t "$name" "ll" C-m
+tmux new-window -n vim
+tmux send-keys "vim ." C-m
+tmux new-window -n spec
+tmux send-keys "guard" C-m
+tmux select-window -t 1
+tmux attach -t "$name"

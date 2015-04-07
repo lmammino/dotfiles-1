@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+unless ARGV[0]
+  puts "Please supply a domain name."
+  exit
+end
+
+results = `ping -oq #{ARGV[0]} 2>&1`
+status = $?.exitstatus
+if status == 68
+  puts "Cannot lookup that host."
+  exit
+elsif status > 0
+  puts "There was a problem: error #{status}"
+  exit
+else
+  ip = results[/(?<=\()(\d+\.?){4}(?=\))/]
+  #`echo #{ip} | pbcopy`
+  `printf "%s" #{ip} | pbcopy`
+  puts "IP address: #{ip}\nCopied to clipboard!"
+end

@@ -1,0 +1,10 @@
+#!/usr/bin/osascript
+
+tell application "Mail"
+  set selectedMessages to (selected messages of front message viewer)
+  if (count of selectedMessages) is greater than 0 then
+    repeat with theMessage in selectedMessages
+      set flag index of theMessage to 1
+    end repeat
+  end if
+end tell

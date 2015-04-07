@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# get current working directory so tmux session can be unique
+app_name="${PWD##*/}"
+name="Grunt-$app_name"
+
+tmux new-session -s "$name" -n zsh -d
+#tmux send-keys -t "$name" "open ." C-m
+tmux send-keys -t "$name" "ll" C-m
+tmux send-keys -t "$name" "lip" C-m
+tmux new-window -n vim
+#tmux send-keys "reattach-to-user-namespace vim ." C-m
+tmux send-keys "vim ." C-m
+tmux new-window -n grunt
+tmux send-keys -t "$name" 'grunt' C-m
+tmux new-window -n 'mysql-dev'
+tmux send-keys -t "$name" "mysql -uroot ${app_name}_dev" C-m
+tmux new-window -n 'mysql-stage-tunnel'
+tmux send-keys -t "$name" "mytnl ${app_name}stage" # wait
+tmux new-window -n 'mysql-stage'
+tmux send-keys -t "$name" "./bin/connect_staging_db.sh" # wait
+tmux new-window -n todo
+#tmux send-keys -t "$name" "reattach-to-user-namespace vim ~/Dropbox/TaskPaper/$app_name.taskpaper" C-m
+tmux send-keys -t "$name" "vim ~/Dropbox/TaskPaper/$app_name.taskpaper" C-m
+tmux select-window -t 1
+tmux attach -t "$name"

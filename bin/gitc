@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+remote = ARGV[0] == nil ? 'origin' : ARGV[0]
+origin = `git remote -v`.match(/#{remote}\t([_@0-9a-zA-Z:\/\S.]+)/)
+if origin and origin.length > 0
+  print origin[1]
+  `echo #{origin[1]} | pbcopy`
+  puts "\"#{origin[1]}\" copied!"
+else
+  puts "No git remote found!"
+end

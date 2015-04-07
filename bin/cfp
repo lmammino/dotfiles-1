@@ -1,0 +1,129 @@
+#!/usr/bin/env ruby -W0
+
+require 'FileUtils'
+
+class ConfigureFlashPlayer
+
+  def initialize
+    sudome
+    @plugin_dir = "/Library/Internet\ Plug-Ins"
+    @archive_dir_name = "Flash Archive"
+    Dir.chdir(@plugin_dir)
+
+    @line = "\n---------------------------------------------------------------------"
+    puts @line
+
+    if check_for_flash
+      @installed = true
+      puts "\n    Archiving current Flash Player...\n"
+      check_before_archive
+      archive_flash
+    else
+      puts "\n    Activating Flash Player...\n"
+      check_before_activate
+      activate_flash
+    end
+  end
+
+  private
+
+  def sudome
+    if ENV["USER"] != "root"
+      exec("sudo #{ENV['_']} #{ARGV.join(' ')}")
+    end
+  end
+
+  def check_before_activate
+    if Dir.exists? @archive_dir_name
+      return true
+    end
+
+    fail_with_message <<-eos
+
+    Flash Archive not found.
+
+    Please ensure that '#{@plugin_dir}/#{@archive_dir_name}'
+    has an archived copy of the Flash Plugin files.
+    eos
+  end
+
+  def check_for_flash
+    Dir.exists? "Flash Player.plugin" and File.exists? "flashplayer.xpt"
+  end
+
+  def check_before_archive
+    unless @installed
+      fail_with_message <<-eos
+
+      Flash Player not found.
+
+      Please ensure that the Flash Plugin files are in
+      '#{@plugin_dir}'.
+      eos
+    end
+  end
+
+  def archive_flash
+    FileUtils.mkdir_p @archive_dir_name
+    FileUtils.mv ['Flash Player.plugin', 'flashplayer.xpt'], @archive_dir_name
+    success_message <<-eos
+
+    Successfully archived!
+
+    eos
+
+    close_browsers
+    reopen_browsers
+    end_message
+  end
+
+  def activate_flash
+    FileUtils.mv ["#{@archive_dir_name}/Flash Player.plugin", "#{@archive_dir_name}/flashplayer.xpt"], Dir.pwd
+    FileUtils.rmdir @archive_dir_name
+    success_message <<-eos
+
+    Successfully activated!
+
+    eos
+
+    close_browsers
+    reopen_browsers
+    end_message
+  end
+
+  def fail_with_message(message)
+    puts message
+    puts @line
+    exit
+  end
+
+  def success_message(message)
+    puts message
+  end
+
+  def close_browsers
+    @active_browsers = []
+    all_browsers = [ "Firefox", "Safari", "Opera", "Camino", "'Google Chrome'", "Chromium" ].each do |b|
+      if `ps axw | grep #{b} | egrep -v 'grep'` != ""
+        @active_browsers << b
+        puts "    Closing #{b}..."
+        `ps axw | grep #{b} | egrep -v 'grep' | awk '{ print $1 }' | xargs kill -9`
+      end
+    end
+  end
+
+  def reopen_browsers
+    @active_browsers.each { |b| `open -a #{b}`}
+  end
+
+  def end_message
+    puts <<-eos
+
+    Done!
+
+    #{@line}
+    eos
+  end
+end
+
+ConfigureFlashPlayer.new

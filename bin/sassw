@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -f ./bin/sassw ]; then
+  ./bin/sassw
+elif [ ! -d "stylesheets/scss" ]; then
+  echo "No stylesheets/scss directory found."
+else
+  sass --watch stylesheets/scss/styles.scss:stylesheets/css/styles.css
+fi

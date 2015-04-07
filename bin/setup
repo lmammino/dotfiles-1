@@ -1,0 +1,43 @@
+#!/usr/bin/env ruby
+
+class Setup
+  CHOICES = %w( tests js )
+  TEST_DIRS = %w( controllers features fixtures helpers requests routing support views )
+
+
+end
+
+unless ARGV[0]
+  puts "\nSetup what?\n"
+  CHOICES.each_with_index do |d, i|
+    puts "#{i + 1}. #{d}"
+  end
+  input = [(print "\nName or number: "), gets.rstrip][1]
+  if input.to_i.to_s === input
+    type = "#{CHOICES[input.to_i - 1]}"
+  else
+    type = input
+  end
+end
+
+unless ARGV[1]
+  puts "\nWhere?"
+end
+
+if type == "tests"
+  TEST_DIRS.each_with_index |d, i| do
+  end
+end
+
+  #puts "lk"
+    #task :dirs => [] do
+      #`touch #{controllers}/.gitkeep`
+      #`touch #{features}/.gitkeep`
+      #`touch #{fixtures}/.gitkeep`
+      #`touch #{helpers}/.gitkeep`
+      #`touch #{requests}/.gitkeep`
+      #`touch #{routing}/.gitkeep`
+      #`touch #{support}/.gitkeep`
+      #`touch #{views}/.gitkeep`
+    #end
+#end

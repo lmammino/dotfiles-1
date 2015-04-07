@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [[ $# -eq 0 ]]; then
+  echo "
+Please pass a unique identifier to this script."
+  echo "
+For example:"
+  echo "    rmk 107.170.212.33"
+  exit 0
+fi
+
+#sed -n -e "/$1/p" ~/.ssh/known_hosts
+sed -i '' "/$1/d" ~/.ssh/known_hosts

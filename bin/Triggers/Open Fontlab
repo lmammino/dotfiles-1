@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+open "/Applications/Fontlab Studio 5.app"
