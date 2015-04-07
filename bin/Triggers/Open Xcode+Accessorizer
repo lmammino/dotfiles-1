@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+open /Applications/Accessorizer.app
+open /Applications/Xcode.app

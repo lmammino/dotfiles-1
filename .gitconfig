@@ -1,0 +1,56 @@
+[user]
+  name = Dylan C. Smith
+  email = rh@izo.me
+[core]
+  pager = less -FRSX
+  excludesfile = ~/.gitignore
+[color]
+  ui = auto
+  pager = true
+  branch = true
+  status = true
+  diff = true
+[color "diff"]
+  meta = yellow
+  frag = cyan
+  old = red
+  new = white
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = red
+[color "status"]
+  added = yellow
+  changed = white
+  untracked = cyan
+[alias]
+  st = status -s
+  ci = commit
+  co = checkout
+  br = branch
+  df = diff --stat
+  lg = log --oneline --decorate --graph
+  ribbon = tag --force _ribbon origin/master
+  catchup = log --patch --reverse --topo-order --first-parent -m _ribbon..origin/master
+  rp = rev-parse HEAD
+[push]
+  default = simple
+[difftool "Kaleidoscope"]
+[diff]
+[difftool]
+[mergetool "Kaleidoscope"]
+	trustexitcode = true
+[mergetool]
+	prompt = false
+[merge]
+	tool = Kaleidoscope
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+[difftool "Kaleidoscope"]
+[difftool]
+[diff]
+	tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false

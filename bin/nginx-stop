@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# Script to stop nginx
+#
+#sudo launchctl unload -w /Library/LaunchDaemons/me.izo.nginx.plist;
+# use the following whether loading manually or not
+#sudo kill `cat /var/run/nginx.pid`
+
+launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
+
+echo "Nginx server stopped."
