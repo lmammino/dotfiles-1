@@ -276,3 +276,5 @@ function! Incr()
   let g:incr = g:incr + 1
   return g:incr
 endfunction
+
+"let g:vimrubocop_config = '~/.rubocop.yml'
