@@ -35,6 +35,12 @@
   rp = rev-parse HEAD
 [push]
   default = simple
+
+[credential "https://dylan-smith-7hxz.squarespace.com/template.git"]
+  username = dylan@rh.izo.me
+[credential]
+  helper = osxkeychain
+
 [difftool "Kaleidoscope"]
 [diff]
 [difftool]
