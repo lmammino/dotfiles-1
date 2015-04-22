@@ -14,6 +14,12 @@ def pbpaste
   `pbpaste`
 end
 
+def mongo_client(db = nil)
+  require "mongo"
+  Mongo::Logger.logger.level = Logger::WARN
+  Mongo::Client.new(['127.0.0.1:27017'], database: db || "test")
+end
+
 # Log to STDOUT if in Rails
 #if ENV.include?('RAILS_ENV') && !Object.const_defined?('RAILS_DEFAULT_LOGGER')
   #require 'logger'
