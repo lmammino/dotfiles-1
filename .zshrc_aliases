@@ -37,6 +37,7 @@ alias raker="rake db:rollback"
 alias rakert="rake db:rollback RAILS_ENV=test"
 alias repos="cd /Users/Shared/Development/GitRepos"
 alias rmorig="find . -name \"*.orig\" -exec rm '{}' ';'"
+alias clearlog="sudo cat /dev/null > "
 #alias rmpyc="find . -name \"*.pyc\" -exec rm '{}' ';'"
 #alias rmsvn='find . -name .svn -print0 | xargs -0 rm -rf'
 #alias rmswp="find . -name \".*.swp\" -exec rm '{}' ';'"

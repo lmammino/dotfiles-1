@@ -3,7 +3,6 @@ export LC_CTYPE=en_US.UTF-8
 export NODE_PATH=/usr/local/lib/node_modules
 export SCALA_HOME=/usr/local/scala
 export GOPATH=/Users/Shared/Development/Go
-#export PATH=$PATH:/usr/local/go/bin
 export XCODE="`xcode-select --print-path`"
 export PATH="/usr/local/bin:$HOME/bin:/usr/local/sbin:/usr/local/mysql/bin:${SCALA_HOME}/bin:$PATH"
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
@@ -17,16 +16,15 @@ export DOCKER_HOST=tcp://192.168.59.103:2376
 
 if [[ -f .api_secrets.yml ]]; then
 
+  export RHIZOME_POSTMARK=`ruby -ryaml -e "puts YAML::load_file(File.join(File.expand_path('~'), '.app_secrets.yml'))['rhizome']['defaults']['postmark']"`
   export AWS_ACCESS_KEY_ID=`ruby -ryaml -e "puts YAML::load_file(File.join(File.expand_path('~'), '.api_secrets.yml'))['default']['aws_access_key_id']"`
   export AWS_SECRET_ACCESS_KEY=`ruby -ryaml -e "puts YAML::load_file(File.join(File.expand_path('~'), '.api_secrets.yml'))['default']['aws_secret_access_key']"`
-  export OJP_AWS_ACCESS_KEY_ID=`ruby -ryaml -e "puts YAML::load_file(File.join(File.expand_path('~'), '.api_secrets.yml'))['ojp']['aws_access_key_id']"`
-  export OJP_AWS_SECRET_ACCESS_KEY=`ruby -ryaml -e "puts YAML::load_file(File.join(File.expand_path('~'), '.api_secrets.yml'))['ojp']['aws_secret_access_key']"`
 
 fi
 
 if [[ -f .app_secrets.yml ]]; then
 
-  #export RHIZOME_POSTMARK=`ruby -ryaml -e "puts YAML::load_file(File.join(File.expand_path('~'), '.app_secrets.yml'))['rhizome']['defaults']['postmark']"`
+  export RHIZOME_BUILDER_KEY=`ruby -ryaml -e "puts YAML::load_file(File.join(File.expand_path('~'), '.app_secrets.yml'))['rhizome']['defaults']['builder_key']"`
 
   #export OAUTH_RAILS_FB_KEY=`ruby -ryaml -e "puts YAML::load_file(File.join(File.expand_path('~'), '.app_secrets.yml'))['oauth_rails']['defaults']['facebook_key']"`
   #export OAUTH_RAILS_FB_SECRET=`ruby -ryaml -e "puts YAML::load_file(File.join(File.expand_path('~'), '.app_secrets.yml'))['oauth_rails']['defaults']['facebook_secret']"`
@@ -43,9 +41,6 @@ if [[ -f .app_secrets.yml ]]; then
   #export POWDERBIRD_FB_KEY=`ruby -ryaml -e "puts YAML::load_file(File.join(File.expand_path('~'), '.app_secrets.yml'))['powderbird']['defaults']['facebook_key']"`
   #export POWDERBIRD_FB_SECRET=`ruby -ryaml -e "puts YAML::load_file(File.join(File.expand_path('~'), '.app_secrets.yml'))['powderbird']['defaults']['facebook_secret']"`
 
-  #export RHIZOME_SQUARESPACE_USER=`ruby -ryaml -e "puts YAML::load_file(File.join(File.expand_path('~'), '.app_secrets.yml'))['rhizome']['defaults']['squarespace_user']"`
-  #export RHIZOME_SQUARESPACE_PASS=`ruby -ryaml -e "puts YAML::load_file(File.join(File.expand_path('~'), '.app_secrets.yml'))['rhizome']['defaults']['squarespace_pass']"`
-
 fi
 
 # python related
@@ -55,6 +50,3 @@ fi
 
 export NVM_DIR="/Users/dylan/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

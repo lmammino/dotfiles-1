@@ -5,7 +5,8 @@ syntax on
 filetype plugin indent on
 
 " use 'f' to toggle filter
-let NERDTreeIgnore = ['\.DS_Store', '\.gz', '\.sass-cache', '\.ico$', '\.jpg$', '\.jpeg$', '\.png$', '\.PNG$', '\.gif$', '\.ttf$', '\.otf$', '\.eot$', '\.woff$']
+"let NERDTreeIgnore = ['\.DS_Store', '\.gz', '\.sass-cache', '\.ico$', '\.jpg$', '\.jpeg$', '\.png$', '\.PNG$', '\.gif$', '\.ttf$', '\.otf$', '\.eot$', '\.woff$']
+let NERDTreeIgnore = ['\.DS_Store', '\.sass-cache']
 
 let $JS_CMD='node'
 let html_no_rendering=1
