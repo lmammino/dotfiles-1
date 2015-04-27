@@ -25,6 +25,9 @@ if [[ -f ~/.app_secrets.yml ]]; then
 
   export RHIZOME_POSTMARK=`ruby -ryaml -e "puts YAML::load_file(File.join(File.expand_path('~'), '.app_secrets.yml'))['rhizome']['defaults']['postmark']"`
   export RHIZOME_BUILDER_KEY=`ruby -ryaml -e "puts YAML::load_file(File.join(File.expand_path('~'), '.app_secrets.yml'))['rhizome']['defaults']['builder_key']"`
+  export RHIZOME_DROPBOX_KEY=`ruby -ryaml -e "puts YAML::load_file(File.join(File.expand_path('~'), '.app_secrets.yml'))['rhizome']['defaults']['dropbox_key']"`
+  export RHIZOME_DROPBOX_SECRET=`ruby -ryaml -e "puts YAML::load_file(File.join(File.expand_path('~'), '.app_secrets.yml'))['rhizome']['defaults']['dropbox_secret']"`
+  export RHIZOME_DROPBOX_TOKEN=`ruby -ryaml -e "puts YAML::load_file(File.join(File.expand_path('~'), '.app_secrets.yml'))['rhizome']['defaults']['dropbox_token']"`
 
   #export OAUTH_RAILS_FB_KEY=`ruby -ryaml -e "puts YAML::load_file(File.join(File.expand_path('~'), '.app_secrets.yml'))['oauth_rails']['defaults']['facebook_key']"`
   #export OAUTH_RAILS_FB_SECRET=`ruby -ryaml -e "puts YAML::load_file(File.join(File.expand_path('~'), '.app_secrets.yml'))['oauth_rails']['defaults']['facebook_secret']"`
