@@ -47,6 +47,6 @@ alias ta="tmux attach -t"
 alias tk="tmux kill-session -t"
 alias tl="tmux list-sessions"
 alias tree='tree -a'
-alias vim="reattach-to-user-namespace vim"
+#alias vim="reattach-to-user-namespace vim"
 alias xcode='cd /Users/Shared/Development/Xcode/Projects'
 alias yui="java -jar ~/bin/yuicompressor-2.4.7.jar"
