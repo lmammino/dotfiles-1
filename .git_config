@@ -149,6 +149,6 @@
 [remote "typescript-vim"]
 	url = https://github.com/leafgarland/typescript-vim.git
 	fetch = +refs/heads/*:refs/remotes/typescript-vim/*
-[remote "tlib_vim"]
-	url = git@github.com:tomtom/tlib_vim.git
-	fetch = +refs/heads/*:refs/remotes/tlib_vim/*
+[remote "vimproc"]
+	url = git@github.com:Shougo/vimproc.vim.git
+	fetch = +refs/heads/*:refs/remotes/vimproc/*
