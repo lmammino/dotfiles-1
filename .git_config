@@ -155,3 +155,6 @@
 [remote "tsuquyomi"]
 	url = git@github.com:Quramy/tsuquyomi.git
 	fetch = +refs/heads/*:refs/remotes/tsuquyomi/*
+[remote "vim-liquid"]
+	url = git@github.com:tpope/vim-liquid.git
+	fetch = +refs/heads/*:refs/remotes/vim-liquid/*
