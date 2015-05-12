@@ -140,7 +140,7 @@ snippet sing
 		$1 = function $1($2) {
 			return instance;
 		};
-		
+
 		// carry over the prototype properties
 		$1.prototype = this;
 
@@ -154,10 +154,22 @@ snippet sing
 
 		return instance;
 	}
-# Crockford's object function 
+# Crockford's object function
 snippet obj
 	function object(o) {
 		function F() {}
 		F.prototype = o;
 		return new F();
 	}
+
+snippet gulp
+	var gulp = require('gulp');
+
+	gulp.task('default', function() {
+	  ${1:// default task here}
+	});
+
+snippet gulpt
+	gulp.task('${1:default}', function() {
+	  ${2:// task here}
+	});

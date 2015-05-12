@@ -4,6 +4,7 @@ OJPRMBP
 .api_secrets.yml
 .app_secrets.yml
 
+.v8*
 .DS_Store
 *.swp
 .netrwhist
