@@ -89,9 +89,6 @@
 [remote "taskpaper"]
 	url = git@github.com:davidoc/taskpaper.vim.git
 	fetch = +refs/heads/*:refs/remotes/taskpaper/*
-[remote "vim_addon_mw_utils"]
-	url = git@github.com:MarcWeber/vim-addon-mw-utils.git
-	fetch = +refs/heads/*:refs/remotes/vim_addon_mw_utils/*
 [remote "vim_coffee_script"]
 	url = git@github.com:kchmck/vim-coffee-script.git
 	fetch = +refs/heads/*:refs/remotes/vim_coffee_script/*
