@@ -152,6 +152,3 @@
 [remote "vim-liquid"]
 	url = git@github.com:tpope/vim-liquid.git
 	fetch = +refs/heads/*:refs/remotes/vim-liquid/*
-[remote "tlib_vim"]
-	url = git@github.com:tomtom/tlib_vim.git
-	fetch = +refs/heads/*:refs/remotes/tlib_vim/*
