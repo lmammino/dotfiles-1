@@ -75,7 +75,7 @@ Dropbox*
 .sh_history
 .sqlite_history
 .subversion
-src/
+/src/
 tmp/
 mbox
 

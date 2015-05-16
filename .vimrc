@@ -92,15 +92,15 @@ map ;b :!open -a Safari %<CR><CR>
 " remap jj to escape
 inoremap jj <ESC>
 
-" remap autocomplete navigation to j/k keys
-inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
-inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
-
 " yank to end of line
 nnoremap Y y$
 
 " Clear screen clears search highlighting.
 nnoremap <C-L> :nohl<CR><C-L>
+
+" remap autocomplete navigation to j/k keys
+inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
+inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 
 " set filetype to Ruby with :FR
 command! FR set filetype=ruby

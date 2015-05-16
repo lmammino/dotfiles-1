@@ -152,3 +152,6 @@
 [remote "ultisnips"]
 	url = git@github.com:SirVer/ultisnips.git
 	fetch = +refs/heads/*:refs/remotes/ultisnips/*
+[remote "vim-twig"]
+	url = git@github.com:evidens/vim-twig.git
+	fetch = +refs/heads/*:refs/remotes/vim-twig/*
