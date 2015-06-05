@@ -1,0 +1,13 @@
+snippet if
+	{% if ${1:condition} %}
+	  ${2:then}
+	{% endif %}${0}
+snippet ife
+	{% if ${1:condition} %}
+	  ${2:then}
+	{% elsif ${3:condition} %}
+	  ${4:then}
+	{% endif %}${0}
+snippet elsif
+	{% elsif ${1:condition} %}
+	  ${0}

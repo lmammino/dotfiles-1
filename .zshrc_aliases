@@ -16,6 +16,7 @@ alias d='cd ~/Desktop'
 alias dev='cd /Users/Shared/Development'
 alias doc='cd ~/Dropbox/Documents'
 alias dock='cd /Users/Shared/Development/Docker'
+alias resume='cd ~/Dropbox/Documents/Resume'
 alias efi="sudo mkdir /Volumes/esp; sudo mount -t msdos /dev/disk0s1 /Volumes/esp"
 alias f="ack -ir"
 alias git.='git add .'
@@ -28,7 +29,7 @@ alias ng="npm list -g --depth=0 2>/dev/null"
 alias nl="npm list --depth=0 2>/dev/null"
 alias ojp='cd ~/Dropbox/Documents/Project\ Documents/Owen\ Jones'
 alias p='cd /Users/Shared/Development/Projects'
-alias pd='cd ~/Dropbox/Documents/Project\ Documents'
+alias pdoc='cd ~/Dropbox/Documents/Project\ Documents'
 alias todo='cd ~/Dropbox/Todo'
 alias precomp="RAILS_ENV=production bundle exec rake assets:precompile"
 alias pwdc="pwd | pbcopy"
@@ -48,6 +49,7 @@ alias sites='cd /Users/Shared/Development/Sites'
 alias ta="tmux attach -t"
 alias tk="tmux kill-session -t"
 alias tl="tmux list-sessions"
+#alias ttmux="tmux new -s ${PWD##*/}"
 alias tree='tree -a'
 #alias vim="reattach-to-user-namespace vim"
 alias xcode='cd /Users/Shared/Development/Xcode/Projects'
