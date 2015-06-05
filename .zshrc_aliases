@@ -9,20 +9,14 @@ alias bin='if [ -d ./bin ]; then cd bin; else cd ~/bin; fi'
 alias brake='bundle exec rake'
 alias bundled="echo '\nInstalling gems for development and test only...\n'; bundle install --without production staging"
 alias code='cd /Users/Shared/Development/Code_Library'
-<<<<<<< HEAD
 alias curlh='curl -IL '
-=======
->>>>>>> 0a9ef969cf3756d34adc4f7adee81db3c436f936
 alias ctag='ctags -R --exclude=.git --exclude=log --exclude=tmp *'
 alias cuc='cucumber'
 alias d='cd ~/Desktop'
 alias dev='cd /Users/Shared/Development'
 alias doc='cd ~/Dropbox/Documents'
 alias dock='cd /Users/Shared/Development/Docker'
-<<<<<<< HEAD
-alias resume='cd ~/Dropbox/Documents/Resume'
-=======
->>>>>>> 0a9ef969cf3756d34adc4f7adee81db3c436f936
+alias res='cd ~/Dropbox/Documents/Resume'
 alias efi="sudo mkdir /Volumes/esp; sudo mount -t msdos /dev/disk0s1 /Volumes/esp"
 alias f="ack -ir"
 alias git.='git add .'
@@ -35,12 +29,8 @@ alias ng="npm list -g --depth=0 2>/dev/null"
 alias nl="npm list --depth=0 2>/dev/null"
 alias ojp='cd ~/Dropbox/Documents/Project\ Documents/Owen\ Jones'
 alias p='cd /Users/Shared/Development/Projects'
-<<<<<<< HEAD
 alias pdoc='cd ~/Dropbox/Documents/Project\ Documents'
 alias todo='cd ~/Dropbox/Todo'
-=======
-alias pd='cd ~/Dropbox/Documents/Project\ Documents'
->>>>>>> 0a9ef969cf3756d34adc4f7adee81db3c436f936
 alias precomp="RAILS_ENV=production bundle exec rake assets:precompile"
 alias pwdc="pwd | pbcopy"
 alias rake='noglob rake' # allows rake and zsh to get along
@@ -59,10 +49,7 @@ alias sites='cd /Users/Shared/Development/Sites'
 alias ta="tmux attach -t"
 alias tk="tmux kill-session -t"
 alias tl="tmux list-sessions"
-<<<<<<< HEAD
 #alias ttmux="tmux new -s ${PWD##*/}"
-=======
->>>>>>> 0a9ef969cf3756d34adc4f7adee81db3c436f936
 alias tree='tree -a'
 alias vim="reattach-to-user-namespace vim"
 alias xcode='cd /Users/Shared/Development/Xcode/Projects'
