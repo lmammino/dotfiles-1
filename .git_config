@@ -155,3 +155,6 @@
 [remote "vim-twig"]
 	url = git@github.com:evidens/vim-twig.git
 	fetch = +refs/heads/*:refs/remotes/vim-twig/*
+[remote "typescript-tools.vim"]
+	url = https://github.com/clausreinke/typescript-tools.vim
+	fetch = +refs/heads/*:refs/remotes/typescript-tools.vim/*
