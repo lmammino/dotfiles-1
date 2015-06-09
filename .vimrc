@@ -56,6 +56,9 @@ setglobal fileencoding=utf-8
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,latin1
 
+let g:jsx_ext_required = 0
+let g:syntastic_javascript_checkers = ['eslint']
+
 " Toggle paste mode
 nnoremap <C-P> :set invpaste paste?<CR>
 
