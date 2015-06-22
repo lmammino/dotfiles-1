@@ -65,6 +65,7 @@
 .sbt/
 .scala_history
 .sh_history
+.spark_history
 .sqlite_history
 .ssh/
 .subversion
@@ -94,5 +95,6 @@ Projects
 Public/
 Sites
 VirtualBox VMs/
+derby.log
 mbox
 /tmp/
