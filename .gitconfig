@@ -34,3 +34,5 @@
   catchup = log --patch --reverse --topo-order --first-parent -m _ribbon..origin/master
   rp = rev-parse HEAD
 
+[push]
+  default = simple

@@ -58,6 +58,7 @@ set fileencodings=ucs-bom,utf-8,latin1
 
 let g:jsx_ext_required = 0
 let g:syntastic_javascript_checkers = ['eslint']
+"let g:syntastic_php_checkers = ['php']
 
 " Toggle paste mode
 nnoremap <C-P> :set invpaste paste?<CR>
@@ -119,7 +120,7 @@ set list listchars=tab:▸\ ,trail:.
 " Turn off validation on save for certain types
 let g:syntastic_mode_map = { 'mode': 'active',
   \ 'active_filetypes': [],
-  \ 'passive_filetypes': ['coffee', 'html'] }
+  \ 'passive_filetypes': ['coffee', 'html', 'php'] }
 
 " Remove trailing white-space
 function! <SID>StripTrailingWhitespaces()
