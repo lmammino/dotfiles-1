@@ -1,6 +1,6 @@
 [user]
-  name = Dylan C. Smith
-  email = rh@izo.me
+  name = KO
+  email = info@koopmanostbo.com
 [core]
   pager = less -FRSX
   excludesfile = ~/.gitignore
@@ -33,30 +33,4 @@
   ribbon = tag --force _ribbon origin/master
   catchup = log --patch --reverse --topo-order --first-parent -m _ribbon..origin/master
   rp = rev-parse HEAD
-[push]
-  default = simple
 
-[credential "https://dylan-smith-7hxz.squarespace.com/template.git"]
-  username = dylan@rh.izo.me
-[credential]
-  helper = osxkeychain
-
-[difftool "Kaleidoscope"]
-[diff]
-[difftool]
-[mergetool "Kaleidoscope"]
-	trustexitcode = true
-[mergetool]
-	prompt = false
-[merge]
-	tool = Kaleidoscope
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-[difftool "Kaleidoscope"]
-[difftool]
-[diff]
-	tool = Kaleidoscope
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[difftool]
-	prompt = false
