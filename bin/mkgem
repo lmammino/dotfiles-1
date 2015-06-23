@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+echo "What Ruby version? (E.g. 2.2.2)"
+
+read ruby_version
+
+echo "What is the RVM gemset name?"
+
+read gemset_name
+
+printf "#ruby=ruby-$ruby_version\n#ruby-gemset=$gemset_name\n\nsource 'https://rubygems.org'\n\n" > Gemfile
