@@ -25,7 +25,8 @@ alias gitu='git add -u'
 alias history='history 0'
 alias ipc="curl ifconfig.me | pbcopy"
 alias ll="ls -alG"
-alias ng="npm list -g --depth=0 2>/dev/null"
+alias npmg="npm list -g --depth=0 2>/dev/null"
+alias npml="npm list --depth=0"
 alias nl="npm list --depth=0 2>/dev/null"
 alias ojp='cd ~/Dropbox/Documents/Project\ Documents/Owen\ Jones'
 alias p='cd /Users/Shared/Development/Projects'

@@ -75,7 +75,7 @@
 .viminfo*
 .zcompdump
 .zsh_history
-/src/
+
 Applications*
 Creative Cloud Files
 Desktop/
@@ -97,4 +97,3 @@ Sites
 VirtualBox VMs/
 derby.log
 mbox
-/tmp/
