@@ -137,9 +137,6 @@
 [remote "vim-rubocop"]
 	url = git@github.com:ngmy/vim-rubocop.git
 	fetch = +refs/heads/*:refs/remotes/vim-rubocop/*
-[remote "typescript-vim"]
-	url = https://github.com/leafgarland/typescript-vim.git
-	fetch = +refs/heads/*:refs/remotes/typescript-vim/*
 [remote "vimproc"]
 	url = git@github.com:Shougo/vimproc.vim.git
 	fetch = +refs/heads/*:refs/remotes/vimproc/*
