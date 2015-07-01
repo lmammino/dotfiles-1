@@ -1,6 +1,10 @@
 #alias api_switch='`echo "${1}"`'
 #alias mytun="ssh dylansm -L 3306:127.0.0.1:3306"
 #api_switch() { eval `~/bin/api_switch.rb ${1}` }
+#alias rmpyc="find . -name \"*.pyc\" -exec rm '{}' ';'"
+#alias rmsvn='find . -name .svn -print0 | xargs -0 rm -rf'
+#alias rmswp="find . -name \".*.swp\" -exec rm '{}' ';'"
+#alias ttmux="tmux new -s ${PWD##*/}"
 alias ...='cd ../../'
 alias ..='cd ../'
 alias awscomp="source /usr/local/bin/aws_zsh_completer.sh"
@@ -8,15 +12,15 @@ alias bfg="java -jar ~/bin/bfg-1.11.7.jar"
 alias bin='if [ -d ./bin ]; then cd bin; else cd ~/bin; fi'
 alias brake='bundle exec rake'
 alias bundled="echo '\nInstalling gems for development and test only...\n'; bundle install --without production staging"
+alias clearlog="sudo cat /dev/null > "
 alias code='cd /Users/Shared/Development/Code_Library'
-alias curlh='curl -IL '
 alias ctag='ctags -R --exclude=.git --exclude=log --exclude=tmp *'
 alias cuc='cucumber'
+alias curlh='curl -IL '
 alias d='cd ~/Desktop'
 alias dev='cd /Users/Shared/Development'
 alias doc='cd ~/Dropbox/Documents'
 alias dock='cd /Users/Shared/Development/Docker'
-alias res='cd ~/Dropbox/Documents/Resume'
 alias efi="sudo mkdir /Volumes/esp; sudo mount -t msdos /dev/disk0s1 /Volumes/esp"
 alias f="ack -ir"
 alias git.='git add .'
@@ -25,13 +29,13 @@ alias gitu='git add -u'
 alias history='history 0'
 alias ipc="curl ifconfig.me | pbcopy"
 alias ll="ls -alG"
+alias mmv='noglob zmv -W'
+alias nl="npm list --depth=0 2>/dev/null"
 alias npmg="npm list -g --depth=0 2>/dev/null"
 alias npml="npm list --depth=0"
-alias nl="npm list --depth=0 2>/dev/null"
 alias ojp='cd ~/Dropbox/Documents/Project\ Documents/Owen\ Jones'
 alias p='cd /Users/Shared/Development/Projects'
 alias pdoc='cd ~/Dropbox/Documents/Project\ Documents'
-alias todo='cd ~/Dropbox/Todo'
 alias precomp="RAILS_ENV=production bundle exec rake assets:precompile"
 alias pwdc="pwd | pbcopy"
 alias rake='noglob rake' # allows rake and zsh to get along
@@ -40,17 +44,14 @@ alias rakemt="rake db:migrate RAILS_ENV=test"
 alias raker="rake db:rollback"
 alias rakert="rake db:rollback RAILS_ENV=test"
 alias repos="cd /Users/Shared/Development/GitRepos"
+alias res='cd ~/Dropbox/Documents/Resume'
 alias rmorig="find . -name \"*.orig\" -exec rm '{}' ';'"
-alias clearlog="sudo cat /dev/null > "
-#alias rmpyc="find . -name \"*.pyc\" -exec rm '{}' ';'"
-#alias rmsvn='find . -name .svn -print0 | xargs -0 rm -rf'
-#alias rmswp="find . -name \".*.swp\" -exec rm '{}' ';'"
 alias secret="ruby -rsecurerandom -e 'puts SecureRandom.hex(32)' | pbcopy; echo '32-byte hex secret copied to clipboard!'"
 alias sites='cd /Users/Shared/Development/Sites'
 alias ta="tmux attach -t"
 alias tk="tmux kill-session -t"
 alias tl="tmux list-sessions"
-#alias ttmux="tmux new -s ${PWD##*/}"
+alias todo='cd ~/Dropbox/Todo'
 alias tree='tree -a'
 alias vim="reattach-to-user-namespace vim"
 alias xcode='cd /Users/Shared/Development/Xcode/Projects'

@@ -5,7 +5,7 @@ SAVEHIST=1000
 HISTFILE=~/.zsh_history
 HISTCONTROL=erasedups
 
-autoload -U colors compinit promptinit
+autoload -U colors compinit promptinit zmv
 colors
 compinit
 promptinit
