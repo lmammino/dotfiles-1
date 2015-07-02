@@ -24,6 +24,7 @@
 .dbk_info
 .dbshell
 .dockercfg
+.docker
 .dropbox*
 .dvdcss/
 .eaglerc
