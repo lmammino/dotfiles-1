@@ -1,6 +1,6 @@
 [user]
-  name = KO
-  email = info@koopmanostbo.com
+  name = Dylan Smith
+  email = dylan@rh.izo.me
 [core]
   pager = less -FRSX
   excludesfile = ~/.gitignore
