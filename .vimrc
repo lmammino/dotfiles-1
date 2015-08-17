@@ -122,19 +122,6 @@ let g:syntastic_mode_map = { 'mode': 'active',
   \ 'active_filetypes': [],
   \ 'passive_filetypes': ['coffee', 'html', 'php'] }
 
-" Remove trailing white-space
-function! <SID>StripTrailingWhitespaces()
-  " Preparation: save last search, and cursor position.
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  " Do the business:
-  %s/\s\+$//e
-  " Clean up: restore previous search history, and cursor position
-  let @/=_s
-  call cursor(l, c)
-endfunction
-
 function! ToggleCoffeeCompilation()
   if exists("g:coffee")
     echo "Coffee compilation disabled"
@@ -157,7 +144,6 @@ nmap <silent>;w :set wrap!<CR>
 nmap <silent>;m :MarkedOpen!<CR>
 
 if has("autocmd")
-  "autocmd BufWritePre FileType ruby :call <SID>StripTrailingWhitespaces()
   " if global custom variable "coffee" is set (using let)
   autocmd BufWritePost,FileWritePost *.coffee if exists("g:coffee") | :silent !coffee -c <afile>
   autocmd BufWritePost *.swift :make
