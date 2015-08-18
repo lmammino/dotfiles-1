@@ -55,6 +55,7 @@ if [ -n "$VIRTUAL_ENV" ]; then
   . "$VIRTUAL_ENV/bin/activate"
 fi
 
-export NVM_DIR="~/.nvm"
+#export NVM_DIR="{$HOME}/.nvm"
+export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 #[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
