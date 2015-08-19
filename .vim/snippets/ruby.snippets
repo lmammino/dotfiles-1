@@ -857,30 +857,30 @@ snippet vc
 snippet ve
 	validates :${1:attribute}, exclusion: { :in => %w( ${2:mov avi} )} },
 	  message: "%{value} ${3:is reserved.}" }
-  ${4}
+	${4}
 snippet vf
 	validates :${1:attribute}, format: { with: /${2:regex}/,
 	  message: "${3:only allows letters}" }
-  ${4}
+	${4}
 snippet vi
 	validates :${1:attribute}, inclusion: { :in => %w( ${2:small medium large} ),
 	  message: "%{value} ${3:is not a valid size}"}
-  ${4}
+	${4}
 snippet vl
 	validates :${1:attribute}, :length => { :${2:minimum} => ${3:3}${4:, :maximum => 12} }
 snippet vn
 	validates :${1:attribute}, numericality: { only_integer: true }
-  ${2}
+	${2}
 snippet vp
 	validates :${1:attribute}, presence: true
-  ${2}
+	${2}
 snippet vu
 	validates :${1:attribute}, uniqueness: { case_sensitive: ${2:false} }
-  ${3}
+	${3}
 snippet vu
 	validates :${1:attribute}, uniqueness: { scope: ${2:attribute},
 	  case_sensitive: ${3:false} }
-  ${4}
+	${4}
 snippet wants
 	wants.${1:js|xml|html} { ${2} }
 snippet wc
@@ -1005,6 +1005,9 @@ snippet gemfile
 	#ruby-gemset=${2:gemset-name}
 
 	source "http://rubygems.org"
+
+snippet bye
+	require 'byebug'; byebug
 
 
 

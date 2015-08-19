@@ -57,3 +57,14 @@ alias tree='tree -a'
 alias vim="reattach-to-user-namespace vim"
 alias xcode='cd /Users/Shared/Development/Xcode/Projects'
 alias yui="java -jar ~/bin/yuicompressor-2.4.7.jar"
+
+# The Program
+alias stumpup="vagrant ssh dev -c 'sudo salt-call state.highstate' && vagrant ssh dev -c 'sudo supervisorctl restart stumptown-puma'"
+alias stumptail="vagrant ssh dev -c 'sudo tail -f /var/log/supervisor/stumptown-puma-std* /var/log/supervisor/supervisord.log ~/stumptown/log/*.log'"
+alias stumptest="vagrant ssh dev -c 'cd stumptown/ && bundle exec rspec'"
+alias stumpbug="vagrant ssh dev -c 'cd stumptown/ && FORCE_SSL=false bundle exec rails server'"
+alias stumpcon="vagrant ssh dev -c 'cd stumptown/ && bundle exec rails console'"
+alias stumpdb="vagrant ssh dev -c 'cd stumptown/ && bundle exec rails dbconsole -p'"
+alias stumpre="vagrant ssh dev -c 'sudo supervisorctl restart stumptown-puma'"
+alias vsh="vagrant ssh"
+#alias vag="vagrant"
