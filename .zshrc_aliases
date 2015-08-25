@@ -66,5 +66,8 @@ alias stumpbug="vagrant ssh dev -c 'cd stumptown/ && FORCE_SSL=false bundle exec
 alias stumpcon="vagrant ssh dev -c 'cd stumptown/ && bundle exec rails console'"
 alias stumpdb="vagrant ssh dev -c 'cd stumptown/ && bundle exec rails dbconsole -p'"
 alias stumpre="vagrant ssh dev -c 'sudo supervisorctl restart stumptown-puma'"
+alias vagst="vagrant global-status"
+alias vagde="vagrant destroy"
+alias vagup="vagrant up"
 alias vsh="vagrant ssh"
 #alias vag="vagrant"
