@@ -40,12 +40,13 @@ ${smiley}  %{$reset_color%}'
 fi
 
 # include nvm
-RPROMPT='%{$fg[red]%}$(nvm_ls 'current')%{$fg[cyan]%} $(~/.gvm/bin/gvm-prompt)%{$reset_color%}%{$fg[magenta]%} $(~/.rvm/bin/rvm-prompt)$(~/bin/git_cwd_info.rb)%{$reset_color%}'
+#RPROMPT='%{$fg[red]%}$(nvm_ls 'current')%{$fg[cyan]%} $(~/.gvm/bin/gvm-prompt)%{$reset_color%}%{$fg[magenta]%} $(~/.rvm/bin/rvm-prompt)$(~/bin/git_cwd_info.rb)%{$reset_color%}'
+RPROMPT='%{$fg[red]%}$(nvm_ls 'current')%{$fg[cyan]%} $(~/.rvm/bin/rvm-prompt)$(~/bin/git_cwd_info.rb)%{$reset_color%}'
 # include gvm go version
 #RPROMPT='%{$fg[cyan]%} $(~/.gvm/bin/gvm-prompt)%{$reset_color%}%{$fg[magenta]%} $(~/.rvm/bin/rvm-prompt)$(~/bin/git_cwd_info.rb)%{$reset_color%}'
 # rvm and git only
 #RPROMPT='%{$fg[magenta]%} $(~/.rvm/bin/rvm-prompt)$(~/bin/git_cwd_info.rb)%{$reset_color%}'
-[[ -s "/Users/dylan/.gvm/scripts/gvm" ]] && source "/Users/dylan/.gvm/scripts/gvm"
+#[[ -s "/Users/dylan/.gvm/scripts/gvm" ]] && source "/Users/dylan/.gvm/scripts/gvm"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
