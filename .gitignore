@@ -73,7 +73,7 @@
 .v8*
 .vagrant.d/
 .vim_mru_files
-.viminfo*
+.viminf*
 .zcompdump
 .zsh_history
 
