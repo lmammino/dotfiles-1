@@ -111,3 +111,8 @@ snippet slt
 	<%= stylesheet_link_tag ${1::all}, :cache => ${2:true} %>
 snippet sslt
 	<%= stylesheet_link_tag "${1}" %>
+snippet bye
+	<% require 'byebug'; byebug %>
+snippet if
+	<% if ${1:condition} %>
+	<% end %>
