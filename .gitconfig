@@ -25,12 +25,12 @@
   untracked = cyan
 [alias]
   st = status -s
-  ci = commit -m
+  ci = commit
   co = checkout
   br = branch
   df = diff --stat
   lg = log --oneline --decorate --graph
-  am = commit --amend -m
+  mm = commit --amend
   ribbon = tag --force _ribbon origin/master
   catchup = log --patch --reverse --topo-order --first-parent -m _ribbon..origin/master
   rp = rev-parse HEAD
