@@ -97,8 +97,7 @@ class Controller
     if @app == 'boot2docker'
       `ps aux | grep #{@app} | grep -v grep | grep -v VirtualBox | grep -v #{__FILE__}`.length > 0
     else
-      #puts `ps aux | grep #{@app}`
-      `ps aux | grep #{@app} | grep -v grep | grep -v tail | grep -v vim | grep -v #{__FILE__}`.length > 0
+      `ps aux | grep -w #{@app} | grep -v grep | grep -v tail | grep -v vim | grep -v #{__FILE__}`.length > 0
     end
   end
 

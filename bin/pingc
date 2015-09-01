@@ -15,7 +15,6 @@ elsif status > 0
   exit
 else
   ip = results[/(?<=\()(\d+\.?){4}(?=\))/]
-  #`echo #{ip} | pbcopy`
   `printf "%s" #{ip} | pbcopy`
   puts "IP address: #{ip}\nCopied to clipboard!"
 end

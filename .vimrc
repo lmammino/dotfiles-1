@@ -259,6 +259,9 @@ let g:CoffeeAutoTagDisabled=0         " Disables autotaging on save (Default: 0 
 let g:CoffeeAutoTagIncludeVars=0  " Includes variables (Default: 0 [false])
 "let g:CoffeeAutoTagTagRelative=<0 or 1>  " Sets file names to the relative path from the tag file location to the tag file location (Default: 1 [true])
 
+let g:syntastic_eruby_ruby_quiet_messages =
+    \ {'regex': 'possibly useless'}
+
 " Incr function will add numbers in search and replace
 " Usage: %s/change@me/\="change@me" . Incr()/
 " \= is the special magic combo for interpolation
@@ -271,6 +274,6 @@ endfunction
 "let g:vimrubocop_config = '~/.rubocop.yml'
 
 " typescript related
-let g:typescript_compiler_options = '-sourcemap'
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
+"let g:typescript_compiler_options = '-sourcemap'
+"autocmd QuickFixCmdPost [^l]* nested cwindow
+"autocmd QuickFixCmdPost    l* nested lwindow
