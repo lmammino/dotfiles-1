@@ -53,6 +53,7 @@
 .pearrc
 .pip/
 .profile
+.pry_history
 .psql_history
 .pyenv/
 .python-eggs/
