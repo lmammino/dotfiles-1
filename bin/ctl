@@ -160,7 +160,7 @@ end
 
 unless ARGV[0] and ARGV[1]
   unless ARGV[0] =~ /list|stop|start/
-    puts "\nUsage:\nctl cmd app-name\n\nPlease provide a command and an application name.\n\n"
+    puts "\nUsage: ctl <command> <application name>\n\nPlease provide a command and an application name.\n\n"
     puts "Commands include: start, stop, start-all, stop-all.\n"
     puts "For a list of available programs, use 'ctl list'."
     exit

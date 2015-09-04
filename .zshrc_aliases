@@ -40,10 +40,11 @@ alias pdoc='cd ~/Dropbox/Documents/Project\ Documents'
 alias precomp="RAILS_ENV=production bundle exec rake assets:precompile"
 alias pwdc="pwd | pbcopy"
 alias rake='noglob rake' # allows rake and zsh to get along
-alias rakem="rake db:migrate"
-alias rakemt="rake db:migrate RAILS_ENV=test"
-alias raker="rake db:rollback"
-alias rakert="rake db:rollback RAILS_ENV=test"
+alias be='bundle exec'
+alias rakem="bundle exec rake db:migrate"
+alias rakemt="bundle exec rake db:migrate RAILS_ENV=test"
+alias raker="bundle exec rake db:rollback"
+alias rakert="bundle exec rake db:rollback RAILS_ENV=test"
 alias repos="cd /Users/Shared/Development/GitRepos"
 alias res='cd ~/Dropbox/Documents/Resume'
 alias rmorig="find . -name \"*.orig\" -exec rm '{}' ';'"

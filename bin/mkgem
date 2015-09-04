@@ -1,11 +1,24 @@
-#!/usr/bin/env bash
+#!/usr/bin/env ruby
 
-echo "What Ruby version? (E.g. 2.2.2)"
+current_ruby_version = `ruby -v`[/(?!\s)\d.\d.\d/]
+puts "What Ruby version? (Default: #{current_ruby_version})"
 
-read ruby_version
+input = gets.chomp
+ruby_version = ((input == '' ? nil : input) || current_ruby_version)
 
-echo "What is the RVM gemset name?"
+puts "What is the RVM gemset name?"
 
-read gemset_name
+while gemset_name = gets.chomp
+  case gemset_name
+  when ''
+    puts 'A gemset name is required (or \'q\' to quit)'
+  when 'q'
+    puts 'Quitting...'
+    exit
+  else
+    puts "Using #{gemset_name}"
+    break
+  end
+end
 
-printf "#ruby=ruby-$ruby_version\n#ruby-gemset=$gemset_name\n\nsource 'https://rubygems.org'\n\n" > Gemfile
+`printf "#ruby=ruby-$ruby_version\n#ruby-gemset=$gemset_name\n\nsource 'https://rubygems.org'\n\n" > Gemfile`
