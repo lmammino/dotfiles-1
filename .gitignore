@@ -49,6 +49,7 @@
 .node-gyp/
 .npm/
 .nvm/
+.oracle_jre_usage/
 .overtone/
 .passenger/
 .pearrc
