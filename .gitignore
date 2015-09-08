@@ -49,6 +49,7 @@
 .node-gyp/
 .npm/
 .nvm/
+.overtone/
 .passenger/
 .pearrc
 .pip/
