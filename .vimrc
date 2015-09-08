@@ -58,7 +58,7 @@ set fileencodings=ucs-bom,utf-8,latin1
 
 let g:jsx_ext_required = 0
 let g:syntastic_javascript_checkers = ['eslint']
-"let g:syntastic_php_checkers = ['php']
+let g:syntastic_php_checkers = ['php']
 
 " Toggle paste mode
 nnoremap <C-P> :set invpaste paste?<CR>
@@ -106,6 +106,8 @@ nnoremap <C-L> :nohl<CR><C-L>
 inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
 inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 
+nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
+
 " set filetype to Ruby with :FR
 command! FR set filetype=ruby
 
@@ -120,7 +122,7 @@ set list listchars=tab:▸\ ,trail:.
 " Turn off validation on save for certain types
 let g:syntastic_mode_map = { 'mode': 'active',
   \ 'active_filetypes': [],
-  \ 'passive_filetypes': ['coffee', 'html', 'php'] }
+  \ 'passive_filetypes': ['coffee', 'html'] }
 
 function! ToggleCoffeeCompilation()
   if exists("g:coffee")
@@ -151,6 +153,7 @@ endif
 
 " format hamlc files as haml
 au BufRead,BufNewFile *.hamlc set ft=haml
+au BufRead,BufNewFile *.go set st=8 sw=8 sts=8
 
 map <C-b> :!open -a Safari %<cr>
 
@@ -181,7 +184,7 @@ map <leader>vv :ccl<cr>
 
 " Emmet / Zen Coding
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,php EmmetInstall
+autocmd FileType html,css,php, EmmetInstall
 let g:user_emmet_leader_key = '<c-y>'
 "let g:user_emmet_leader_key = 'm'
 let g:user_emmet_settings = {
