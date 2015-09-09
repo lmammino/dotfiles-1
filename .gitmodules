@@ -127,3 +127,6 @@
 [submodule ".vim/bundle/docker.vim"]
 	path = .vim/bundle/docker.vim
 	url = git@github.com:honza/dockerfile.vim.git
+[submodule "/Users/dylan/.vim/bundle/vim-fireplace"]
+	path = /Users/dylan/.vim/bundle/vim-fireplace
+	url = git@github.com:tpope/vim-fireplace.git

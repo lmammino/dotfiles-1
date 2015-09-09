@@ -155,3 +155,5 @@
 [remote "vim-javascript"]
 	url = https://github.com/pangloss/vim-javascript.git
 	fetch = +refs/heads/*:refs/remotes/vim-javascript/*
+[submodule "/Users/dylan/.vim/bundle/vim-fireplace"]
+	url = git@github.com:tpope/vim-fireplace.git
