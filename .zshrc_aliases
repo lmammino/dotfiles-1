@@ -13,6 +13,7 @@ alias bin='if [ -d ./bin ]; then cd bin; else cd ~/bin; fi'
 alias brake='bundle exec rake'
 alias bundled="echo '\nInstalling gems for development and test only...\n'; bundle install --without production staging"
 alias clearlog="sudo cat /dev/null > "
+alias cloj='cd /Users/Shared/Development/Clojure'
 alias code='cd /Users/Shared/Development/Code_Library'
 alias ctag='ctags -R --exclude=.git --exclude=log --exclude=tmp *'
 alias cuc='cucumber'

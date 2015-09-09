@@ -38,7 +38,6 @@
 .heroku/
 .irb-history
 .ivy2/
-.lein/
 .lesshst
 .lldb
 .m2/
