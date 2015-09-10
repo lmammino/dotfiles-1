@@ -154,6 +154,7 @@ endif
 " format hamlc files as haml
 au BufRead,BufNewFile *.hamlc set ft=haml
 au BufRead,BufNewFile *.go set st=8 sw=8 sts=8
+au BufRead,BufNewFile *.java set st=4 sw=4 sts=4
 
 map <C-b> :!open -a Safari %<cr>
 
