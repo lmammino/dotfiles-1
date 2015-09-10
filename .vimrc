@@ -106,7 +106,7 @@ nnoremap <C-L> :nohl<CR><C-L>
 inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
 inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 
-nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
+nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<CR>
 
 " set filetype to Ruby with :FR
 command! FR set filetype=ruby
@@ -115,6 +115,9 @@ map <C-K> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
 " Shortcut to rapidly toggle `set list`
 nmap <leader>ll :set list!<CR>
+
+nnoremap <leader>sh :Slamhound<CR>
+
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬,trail:.
 set list listchars=tab:▸\ ,trail:.
@@ -134,9 +137,9 @@ function! ToggleCoffeeCompilation()
   endif
 endfunction
 
-nmap <silent>;c :call ToggleCoffeeCompilation()<cr>
+nmap <silent>;c :call ToggleCoffeeCompilation()<CR>
 " pull up most recent docs
-nmap <silent>;r :MRU<cr>
+nmap <silent>;r :MRU<CR>
 
 " tagbar
 let g:tagbar_autofocus = 1
@@ -156,7 +159,7 @@ au BufRead,BufNewFile *.hamlc set ft=haml
 au BufRead,BufNewFile *.go set st=8 sw=8 sts=8
 au BufRead,BufNewFile *.java set st=4 sw=4 sts=4
 
-map <C-b> :!open -a Safari %<cr>
+map <C-b> :!open -a Safari %<CR>
 
 " cmd-f for Ack
 "map <C-F> :Ack -i<space>
@@ -176,12 +179,12 @@ let g:ctrlp_map = ',,'
 map \\ :NERDTreeToggle<CR>
 
 " change window
-map <leader>ww :winc w<cr>
+map <leader>ww :winc w<CR>
 
 " quickfix open
-map <leader>aa :cope<cr>
+map <leader>aa :cope<CR>
 " close
-map <leader>vv :ccl<cr>
+map <leader>vv :ccl<CR>
 
 " Emmet / Zen Coding
 let g:user_emmet_install_global = 0

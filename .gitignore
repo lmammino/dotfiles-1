@@ -1,7 +1,6 @@
 *.swp
 .CFUserTextEncoding
 .DS_Store
-.Extensis
 .FrontDesign/
 .NERDTreeBookmarks
 .Trash/
@@ -39,6 +38,8 @@
 .irb-history
 .ivy2/
 .lesshst
+/.lein/*
+!/.lein/profiles.clj
 .lldb
 .m2/
 .mysql_history
