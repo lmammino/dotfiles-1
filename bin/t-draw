@@ -1,0 +1,24 @@
+#!/usr/local/bin/zsh
+
+# get current working directory so tmux session can be unique
+name="TheDraw"
+
+tmux new-session -s "$name" -n ${SHELL##*/} -d
+tmux send-keys -t "$name" "ll" C-m
+tmux send-keys -t "$name" "open http://thedraw.nikedev.com:3000/adm/login" C-m
+tmux new-window -n vim
+tmux send-keys -t "$name" 'reattach-to-user-namespace vim .' C-m
+tmux new-window -n guard
+tmux send-keys -t "$name" "bundle exec guard" C-m
+tmux new-window -n server
+tmux send-keys -t "$name" 'reattach-to-user-namespace bundle exec rails server' C-m
+tmux new-window -n console
+tmux send-keys -t "$name" 'reattach-to-user-namespace bundle exec rails console' C-m
+tmux new-window -n sql
+tmux send-keys -t "$name" 'reattach-to-user-namespace bundle exec rails dbconsole -p' C-m
+tmux new-window -n irb
+tmux send-keys -t "$name" 'reattach-to-user-namespace bundle exec irb' C-m
+tmux new-window -n sidekiq
+tmux send-keys -t "$name" 'bundle exec sidekiq' C-m
+tmux select-window -t 0
+tmux attach -t "$name"
