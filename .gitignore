@@ -31,6 +31,7 @@
 .gitk
 .gittrees
 .gnupg
+.gore/
 .gradle/
 .grunt-init
 .guard_history
@@ -77,6 +78,7 @@
 .v8*
 .vagrant.d/
 .vim_mru_files
+.vimgolf/
 .viminf*
 .zcompdump
 .zsh_history
