@@ -9,6 +9,7 @@
 .app_secrets.yml
 .atom/
 .avrduderc
+.babel.json
 .bash*
 .boot2docker/
 .byebug_hist

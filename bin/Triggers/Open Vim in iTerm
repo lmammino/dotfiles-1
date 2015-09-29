@@ -5,11 +5,15 @@ open /Applications/iTerm.app
 osascript <<'EOD'
 
 tell application "iTerm"
-  tell the current terminal
-    tell the last session
-      write text "vim ."
-    end tell
-  end tell
+	set term to (make new terminal)
+	tell term
+		activate current session
+		launch session "Default Session"
+
+		tell the current session
+			write text "vim ."
+		end tell
+	end tell
 end tell
 
 EOD

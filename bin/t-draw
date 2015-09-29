@@ -18,6 +18,8 @@ tmux new-window -n sql
 tmux send-keys -t "$name" 'reattach-to-user-namespace bundle exec rails dbconsole -p' C-m
 tmux new-window -n irb
 tmux send-keys -t "$name" 'reattach-to-user-namespace bundle exec irb' C-m
+tmux new-window -n sinatra
+tmux send-keys -t "$name" 'bundle exec ruby ulr_vs.rb' C-m
 tmux new-window -n sidekiq
 tmux send-keys -t "$name" 'bundle exec sidekiq' C-m
 tmux select-window -t 0
