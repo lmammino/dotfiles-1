@@ -155,8 +155,12 @@
 [remote "vim-javascript"]
 	url = https://github.com/pangloss/vim-javascript.git
 	fetch = +refs/heads/*:refs/remotes/vim-javascript/*
-[submodule "/Users/dylan/.vim/bundle/vim-fireplace"]
-	url = git@github.com:tpope/vim-fireplace.git
 [remote "vim-slamhound"]
 	url = git@github.com:guns/vim-slamhound.git
 	fetch = +refs/heads/*:refs/remotes/vim-slamhound/*
+[remote "vim-textobj-user"]
+	url = git@github.com:kana/vim-textobj-user.git
+	fetch = +refs/heads/*:refs/remotes/vim-textobj-user/*
+[remote "vim-textobj-quote"]
+	url = git@github.com:reedes/vim-textobj-quote.git
+	fetch = +refs/heads/*:refs/remotes/vim-textobj-quote/*
