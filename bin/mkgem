@@ -4,7 +4,7 @@ current_ruby_version = `ruby -v`[/(?!\s)\d.\d.\d/]
 puts "What Ruby version? (Default: #{current_ruby_version})"
 
 input = gets.chomp
-ruby_version = ((input == '' ? nil : input) || current_ruby_version)
+ruby_version = (input == '' ? current_ruby_version : input)
 
 puts "What is the RVM gemset name?"
 
@@ -21,4 +21,4 @@ while gemset_name = gets.chomp
   end
 end
 
-`printf "#ruby=ruby-$ruby_version\n#ruby-gemset=$gemset_name\n\nsource 'https://rubygems.org'\n\n" > Gemfile`
+`printf "#ruby=ruby-#{ruby_version}\n#ruby-gemset=#{gemset_name}\n\nsource 'https://rubygems.org'\n\n" > Gemfile`
