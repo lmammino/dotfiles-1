@@ -21,4 +21,10 @@ while gemset_name = gets.chomp
   end
 end
 
+all_gemsets = `rvm gemset list`
+if all_gemsets.include? gemset_name
+  `rvm gemset use #{gemset_name}`
+else
+  `rvm gemset use #{gemset_name} --create`
+end
 `printf "#ruby=ruby-$ruby_version\n#ruby-gemset=$gemset_name\n\nsource 'https://rubygems.org'\n\n" > Gemfile`
