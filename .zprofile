@@ -2,7 +2,6 @@ export EDITOR="vim"
 export LC_CTYPE=en_US.UTF-8
 export NODE_PATH=/usr/local/lib/node_modules
 export SCALA_HOME=/usr/local/scala
-#export GOPATH="$GOPATH:/Users/Shared/Development/Go"
 export XCODE="`xcode-select --print-path`"
 export PATH="/usr/local/bin:$HOME/bin:/usr/local/sbin:/usr/local/mysql/bin:${SCALA_HOME}/bin:$PATH"
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
@@ -50,7 +49,4 @@ if [ -n "$VIRTUAL_ENV" ]; then
   . "$VIRTUAL_ENV/bin/activate"
 fi
 
-#export NVM_DIR="{$HOME}/.nvm"
 export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

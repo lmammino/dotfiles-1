@@ -1,16 +1,10 @@
-#alias api_switch='`echo "${1}"`'
-#alias mytun="ssh dylansm -L 3306:127.0.0.1:3306"
-#api_switch() { eval `~/bin/api_switch.rb ${1}` }
-#alias rmpyc="find . -name \"*.pyc\" -exec rm '{}' ';'"
-#alias rmsvn='find . -name .svn -print0 | xargs -0 rm -rf'
-#alias rmswp="find . -name \".*.swp\" -exec rm '{}' ';'"
-#alias ttmux="tmux new -s ${PWD##*/}"
 alias ...='cd ../../'
 alias ..='cd ../'
 alias awscomp="source /usr/local/bin/aws_zsh_completer.sh"
 alias bfg="java -jar ~/bin/bfg-1.11.7.jar"
 alias bin='if [ -d ./bin ]; then cd bin; else cd ~/bin; fi'
 alias brake='bundle exec rake'
+alias brewup='brew update && brew upgrade brew-cask && brew cleanup'
 alias bundled="echo '\nInstalling gems for development and test only...\n'; bundle install --without production staging"
 alias clearlog="sudo cat /dev/null > "
 alias cloj='cd /Users/Shared/Development/Clojure'
@@ -54,21 +48,23 @@ alias tk="tmux kill-session -t"
 alias tl="tmux list-sessions"
 alias todo='cd ~/Dropbox/Todo'
 alias tree='tree -a'
+alias vag='vagrant'
 alias vim="reattach-to-user-namespace vim"
 alias xcode='cd /Users/Shared/Development/Xcode/Projects'
 alias yui="java -jar ~/bin/yuicompressor-2.4.7.jar"
 
 # The Program
-alias stumpup="vagrant ssh dev -c 'sudo salt-call state.highstate' && vagrant ssh dev -c 'sudo supervisorctl restart stumptown-puma'"
-alias stumptail="vagrant ssh dev -c 'sudo tail -f /var/log/supervisor/stumptown-puma-std* /var/log/supervisor/supervisord.log ~/stumptown/log/*.log'"
-alias stumptest="vagrant ssh dev -c 'cd stumptown/ && bundle exec rspec'"
-alias stumpbug="vagrant ssh dev -c 'cd stumptown/ && FORCE_SSL=false bundle exec rails server'"
+#alias stumpup="vagrant ssh dev -c 'sudo salt-call state.highstate' && vagrant ssh dev -c 'sudo supervisorctl restart stumptown-puma'"
+#alias stumptail="vagrant ssh dev -c 'sudo tail -f /var/log/supervisor/stumptown-puma-std* /var/log/supervisor/supervisord.log ~/stumptown/log/*.log'"
+#alias stumptest="vagrant ssh dev -c 'cd stumptown/ && bundle exec rspec'"
+#alias stumpbug="vagrant ssh dev -c 'cd stumptown/ && FORCE_SSL=false bundle exec rails server'"
 #alias stumpbug="vagrant ssh dev -c 'cd stumptown/ && FORCE_SSL=false bundle exec rails server' -- -oSendEnv=dylansmith"
-alias stumpcon="vagrant ssh dev -c 'cd stumptown/ && bundle exec rails console'"
-alias stumpdb="vagrant ssh dev -c 'cd stumptown/ && bundle exec rails dbconsole -p'"
-alias stumpre="vagrant ssh dev -c 'sudo supervisorctl restart stumptown-puma'"
+#alias stumpcon="vagrant ssh dev -c 'cd stumptown/ && bundle exec rails console'"
+#alias stumpdb="vagrant ssh dev -c 'cd stumptown/ && bundle exec rails dbconsole -p'"
+#alias stumpre="vagrant ssh dev -c 'sudo supervisorctl restart stumptown-puma'"
 alias vagst="vagrant global-status"
 alias vagde="vagrant destroy"
 alias vagup="vagrant up"
 alias vagssh="vagrant ssh"
+alias vagsshc="vagrant ssh-config"
 #alias vag="vagrant"

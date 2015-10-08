@@ -1,5 +1,6 @@
 source ~/.zshrc_aliases
 source ~/.gvm/scripts/gvm
+source $(brew --prefix nvm)/nvm.sh
 
 HISTSIZE=1000
 SAVEHIST=1000
@@ -16,9 +17,9 @@ setopt AUTO_CD
 setopt NO_CASE_GLOB  # set ignore case for ls etc
 setopt AUTO_PUSHD
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'   # case insensitive completion for cd etc *N*
+zstyle ':completion:*:*:git:*' script ~/bin/.git-completion.sh
 
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
-zstyle ':completion:*:*:git:*' script ~/bin/.git-completion.sh
 
 bindkey -e
 bindkey '^[[1;9C' forward-word
@@ -43,6 +44,3 @@ fi
 RPROMPT='%{$fg[red]%}$(nvm_ls 'current')%{$fg[cyan]%} $(~/.gvm/bin/gvm-prompt)%{$reset_color%}%{$fg[magenta]%} $(~/.rvm/bin/rvm-prompt)$(~/bin/git_cwd_info.rb)%{$reset_color%}'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-#[[ -s "/Users/dylan/.gvm/bin/gvm-init.sh" ]] && source "/Users/dylan/.gvm/bin/gvm-init.sh"
