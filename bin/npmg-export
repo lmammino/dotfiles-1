@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+global_packages = `npm list -g --depth=0 2>/dev/null`
+
+puts global_packages.scan(/(?<=── ).*(?=@)/)
