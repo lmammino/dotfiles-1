@@ -26,6 +26,7 @@ alias ll="ls -alG"
 alias mmv='noglob zmv -W'
 alias nl="npm list --depth=0 2>/dev/null"
 alias npmg="npm list -g --depth=0 2>/dev/null"
+alias npmo="npm outdated -g --depth=0"
 alias npml="npm list --depth=0"
 alias ojp='cd ~/Dropbox/Documents/Project\ Documents/Owen\ Jones'
 alias p='cd /Users/Shared/Development/Projects'
