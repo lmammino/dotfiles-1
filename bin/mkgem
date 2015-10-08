@@ -8,7 +8,7 @@ ruby_version = (input == '' ? current_ruby_version : input)
 
 puts "What is the RVM gemset name?"
 
-while gemset_name = gets.chomp
+while gemset_name = gets.chomp.downcase
   case gemset_name
   when ''
     puts 'A gemset name is required (or \'q\' to quit)'
@@ -16,19 +16,19 @@ while gemset_name = gets.chomp
     puts 'Quitting...'
     exit
   else
-    puts "Using #{gemset_name}"
+    puts "Using #{gemset_name.downcase}"
     break
   end
 end
 
-<<<<<<< HEAD
-all_gemsets = `rvm gemset list`
-if all_gemsets.include? gemset_name
-  `rvm gemset use #{gemset_name}`
-else
-  `rvm gemset use #{gemset_name} --create`
-end
-`printf "#ruby=ruby-$ruby_version\n#ruby-gemset=$gemset_name\n\nsource 'https://rubygems.org'\n\n" > Gemfile`
-=======
+#all_gemsets = `~/.rvm/bin/rvm gemset list`
+rvm = '~/.rvm/bin/rvm'
+all_gemsets = `#{rvm} gemset list`
+
+#if all_gemsets.include? gemset_name
+  ##`#{rvm} gemset use #{gemset_name}`
+  #`#{File.join(ENV['HOME'],'.rvm/bin/rvm')} gemset use #{gemset_name}`
+#else
+  #`#{rvm} gemset use #{gemset_name} --create`
+#end
 `printf "#ruby=ruby-#{ruby_version}\n#ruby-gemset=#{gemset_name}\n\nsource 'https://rubygems.org'\n\n" > Gemfile`
->>>>>>> edf1973085bd741a9cdbe0bcf64901932bffc934
