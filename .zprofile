@@ -2,22 +2,9 @@ export EDITOR="vim"
 export LC_CTYPE=en_US.UTF-8
 export NODE_PATH=/usr/local/lib/node_modules
 export SCALA_HOME=/usr/local/scala
-#export GOPATH="$GOPATH:/Users/Shared/Development/Go"
 export XCODE="`xcode-select --print-path`"
 export PATH="/usr/local/bin:$HOME/bin:/usr/local/sbin:/usr/local/mysql/bin:${SCALA_HOME}/bin:$PATH"
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
-
-# uncomment when using AVR
-#export C_INCLUDE_PATH=/usr/local/CrossPack-AVR/include:$C_INCLUDE_PATH
-
-#export DOCKER_CERT_PATH=/Users/dylan/.boot2docker/certs/boot2docker-vm
-#export DOCKER_TLS_VERIFY=1
-#export DOCKER_HOST=tcp://192.168.59.103:2376
-#
-#export DOCKER_TLS_VERIFY="1"
-#export DOCKER_HOST="tcp://192.168.99.100:2376"
-#export DOCKER_CERT_PATH="/Users/dylan/.docker/machine/machines/b2d"
-#export DOCKER_MACHINE_NAME="b2d"
 
 if [[ -f ~/.api_secrets.yml ]]; then
 
@@ -61,7 +48,4 @@ if [ -n "$VIRTUAL_ENV" ]; then
   . "$VIRTUAL_ENV/bin/activate"
 fi
 
-#export NVM_DIR="{$HOME}/.nvm"
 export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
