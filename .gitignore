@@ -50,6 +50,7 @@
 .netrwhist
 .node-completion/
 .node-gyp/
+.node_repl_history
 .npm/
 .nvm/
 .oracle_jre_usage/
